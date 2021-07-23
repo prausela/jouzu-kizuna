@@ -1,0 +1,48 @@
+.interface {
+    display: grid;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    grid-template-areas: 
+        "menu menu"
+        "q q"
+        "q q"
+        "q q"
+        "ans1 ans2"
+        "ans1 ans2"
+        "ans3 ans4"
+        "ans3 ans4";
+}
+
+.menu{
+    grid-area: menu;
+    background-color: #c0c;
+}
+
+.question{
+    grid-area: q;
+    background-color: #0cc;
+}
+
+
+.ans1{
+    grid-area: ans1;
+    background-color: #c00;
+}
+
+.ans2{
+    grid-area: ans2;
+    background-color: #0c0;
+}
+
+.ans3{
+    grid-area: ans3;
+    background-color: #00c;
+}
+
+.ans4{
+    grid-area: ans4;
+    background-color: #cc0;
+}
