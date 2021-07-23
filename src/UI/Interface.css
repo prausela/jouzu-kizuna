@@ -21,18 +21,18 @@
 
 .menu{
     grid-area: menu;
-    font-size: 3em;
+    font-size: 1.5em;
     margin: auto auto;
 }
 
 .question{
     grid-area: q;
     margin: auto auto;
-    font-size: 10em;
+    font-size: 5em;
 }
 
 .ans .btn {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .ans1{
