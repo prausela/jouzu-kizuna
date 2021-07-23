@@ -10,15 +10,19 @@
         "q q"
         "q q"
         "q q"
+        "q q"
         "ans1 ans2"
         "ans1 ans2"
+        "ans1 ans2"
+        "ans3 ans4"
         "ans3 ans4"
         "ans3 ans4";
 }
 
 .menu{
     grid-area: menu;
-    background-color: #c0c;
+    font-size: 3em;
+    margin: auto auto;
 }
 
 .question{
