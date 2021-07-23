@@ -19,10 +19,14 @@
         "ans3 ans4";
 }
 
+.flex-basis-0 {
+    flex-basis: 0;
+}
+
 .menu{
     grid-area: menu;
     font-size: 1.5em;
-    margin: auto auto;
+    margin: auto 0;
 }
 
 .question{
@@ -49,4 +53,9 @@
 
 .ans4{
     grid-area: ans4;
+}
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }

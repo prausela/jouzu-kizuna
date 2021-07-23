@@ -7,7 +7,7 @@ const AnswerUI = (props) => {
     const submitAnswer  = () => props.submitAnswer(text);
     return (
         <div className={className}>
-            <Button variant="outline-dark" className="display-2" onClick={submitAnswer}>{text}</Button>
+            <Button variant="outline-dark" className="display-2" onClick={submitAnswer} active>{text}</Button>
         </div>
     )
 }

@@ -15,13 +15,23 @@ const Interface = (props) => {
     const correct      = props.correct;
     const incorrect    = props.incorrect;
     const submitAnswer = props.submitAnswer;
+    const resetGame    = props.resetGame;
     return (
         <div className="interface">
-            <MenuUI correct={correct} incorrect={incorrect}/>
+            <MenuUI 
+                correct={correct} 
+                incorrect={incorrect}
+                resetGame={resetGame}
+            />
             <div className="question">{question}</div>
             {
                 answers.map(ans => (
-                    <AnswerUI text={ans.text} className={ans.className} key={ans.id} submitAnswer={submitAnswer}/>
+                    <AnswerUI 
+                        text={ans.text} 
+                        className={ans.className} 
+                        key={ans.id} 
+                        submitAnswer={submitAnswer}
+                    />
                 ))
             }
         </div>

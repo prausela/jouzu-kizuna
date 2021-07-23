@@ -34,13 +34,28 @@ const App = () => {
         loadNextQuestion();
     }
 
+    const resetGame = () => {
+        setCorrect(0);
+        setIncorrect(0);
+    }
+
     useEffect(() => {
         gameData.current = KanjiToHiraganaService.startNewGame();
         loadNextQuestion()
     }, []);
 
     return (
-        <Interface correct={correct} incorrect={incorrect} question={question} ans1={ans1} ans2={ans2} ans3={ans3} ans4={ans4} submitAnswer={submitAnswer}/>
+        <Interface 
+            correct={correct} 
+            incorrect={incorrect} 
+            question={question} 
+            ans1={ans1} 
+            ans2={ans2} 
+            ans3={ans3} 
+            ans4={ans4} 
+            submitAnswer={submitAnswer}
+            resetGame={resetGame}
+        />
     )
 }
 
