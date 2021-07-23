@@ -2,6 +2,7 @@ import React from 'react';
 import './Interface.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AnswerUI from './AnswerUI';
+import MenuUI from './MenuUI';
 
 const Interface = (props) => {
     const question = props.question ? props.question : "";
@@ -13,7 +14,7 @@ const Interface = (props) => {
     ]
     return (
         <div className="interface">
-            <div className="menu"></div>
+            <MenuUI />
             <div className="question">{question}</div>
             {
                 answers.map(ans => (
