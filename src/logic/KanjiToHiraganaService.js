@@ -50,9 +50,15 @@ const getNextQuestion = (questions) => {
     };
 }
 
+const checkIfCorrectAnswer = (question, answer) => {
+    const answerData = KanjiToHiraganaDAO.getPossibleAnswers(question);
+    return answer === answerData.correct;
+}
+
 const KanjiToHiraganaService = {
     startNewGame,
-    getNextQuestion
+    getNextQuestion,
+    checkIfCorrectAnswer
 }
 
 export default KanjiToHiraganaService;
