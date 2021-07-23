@@ -23,9 +23,13 @@
 
 .question{
     grid-area: q;
-    background-color: #0cc;
+    margin: auto auto;
+    font-size: 10em;
 }
 
+.ans .btn {
+    font-size: 3em;
+}
 
 .ans1{
     grid-area: ans1;
