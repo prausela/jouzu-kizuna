@@ -12,9 +12,11 @@ const Interface = (props) => {
         { id: 3, text : props.ans3 ? props.ans3 : "", className : "ans3" }, 
         { id: 4, text : props.ans4 ? props.ans4 : "", className : "ans4" }, 
     ]
+    const correct   = props.correct;
+    const incorrect = props.incorrect;
     return (
         <div className="interface">
-            <MenuUI />
+            <MenuUI correct={correct} incorrect={incorrect}/>
             <div className="question">{question}</div>
             {
                 answers.map(ans => (
