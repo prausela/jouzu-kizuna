@@ -6,7 +6,7 @@ const AnswerUI = (props) => {
     const text = props.text;
     return (
         <div className={className}>
-            <Button variant="primary">{text}</Button>
+            <Button variant="outline-dark">{text}</Button>
         </div>
     )
 }
