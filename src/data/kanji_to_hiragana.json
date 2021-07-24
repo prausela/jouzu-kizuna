@@ -1,5 +1,6 @@
 [
     {
+        "id"                : "0",
         "question"          : "魚",
         "correct_answer"    : "さかな",
         "other_answers"     : [
@@ -24,6 +25,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "1",
         "question"          : "肉",
         "correct_answer"    : "にく",
         "other_answers"     : [
@@ -48,6 +50,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "2",
         "question"          : "卵",
         "correct_answer"    : "たまご",
         "other_answers"     : [
@@ -72,6 +75,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "3",
         "question"          : "水",
         "correct_answer"    : "みず",
         "other_answers"     : [
@@ -95,6 +99,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "4",
         "question"          : "食",
         "correct_answer"    : "た(べます)",
         "other_answers"     : [
@@ -119,6 +124,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "5",
         "question"          : "飲",
         "correct_answer"    : "の(みます)",
         "other_answers"     : [
@@ -143,6 +149,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "6",
         "question"          : "大",
         "correct_answer"    : "おお(きい)",
         "other_answers"     : [
@@ -167,6 +174,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "7",
         "question"          : "小",
         "correct_answer"    : "ちい(さい)",
         "other_answers"     : [
@@ -191,6 +199,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "8",
         "question"          : "新",
         "correct_answer"    : "あたら(しい)",
         "other_answers"     : [
@@ -215,6 +224,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "9",
         "question"          : "古",
         "correct_answer"    : "ふる(い)",
         "other_answers"     : [
@@ -239,6 +249,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "10",
         "question"          : "時",
         "correct_answer"    : "じ",
         "other_answers"     : [
@@ -263,6 +274,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "11",
         "question"          : "分",
         "correct_answer"    : "ふん・ぷん",
         "other_answers"     : [
@@ -287,6 +299,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "12",
         "question"          : "半",
         "correct_answer"    : "はん",
         "other_answers"     : [
@@ -311,6 +324,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "13",
         "question"          : "月",
         "correct_answer"    : "げつ(ようび)",
         "other_answers"     : [
@@ -335,6 +349,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "14",
         "question"          : "火",
         "correct_answer"    : "か(ようび)",
         "other_answers"     : [
@@ -359,6 +374,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "15",
         "question"          : "水",
         "correct_answer"    : "すい(ようび)",
         "other_answers"     : [
@@ -382,6 +398,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "16",
         "question"          : "木",
         "correct_answer"    : "もく(ようび)",
         "other_answers"     : [
@@ -406,6 +423,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "17",
         "question"          : "金",
         "correct_answer"    : "きん(ようび)",
         "other_answers"     : [
@@ -430,6 +448,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "18",
         "question"          : "土",
         "correct_answer"    : "ど(ようび)",
         "other_answers"     : [
@@ -454,6 +473,7 @@
             "にち(ようび)"
         ]
     }, {
+        "id"                : "19",
         "question"          : "日",
         "correct_answer"    : "にち(ようび)",
         "other_answers"     : [
