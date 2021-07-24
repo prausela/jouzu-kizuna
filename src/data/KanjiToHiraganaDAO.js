@@ -1,11 +1,11 @@
 import KanjiToHiragana from './kanji_to_hiragana.json';
 
 const getQuestions = () => {
-    return KanjiToHiragana.map(ans => ans.question) || [];
+    return KanjiToHiragana.map(ans => ({ id: ans.id, question: ans.question })) || [];
 }
 
-const getPossibleAnswers = (question) => {
-    const answerObject = KanjiToHiragana.find(ans => ans.question === question);
+const getPossibleAnswers = (id) => {
+    const answerObject = KanjiToHiragana.find(ans => ans.id === id);
 
     if(!answerObject || !answerObject.correct_answer){
         return undefined;

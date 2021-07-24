@@ -9,6 +9,7 @@ const App = () => {
     const [ correct, setCorrect ] = useState(0);
     const [ incorrect, setIncorrect ] = useState(0);
 
+    const [ id, setId ] = useState("");
     const [ question, setQuestion ] = useState("");
     const [ ans1, setAns1 ] = useState("");
     const [ ans2, setAns2 ] = useState("");
@@ -17,6 +18,7 @@ const App = () => {
 
     const loadNextQuestion = () => {
         const nextQuestion = KanjiToHiraganaService.getNextQuestion(gameData.current.questions);
+        setId(nextQuestion.id);
         setQuestion(nextQuestion.question);
         setAns1(nextQuestion.answers[0]);
         setAns2(nextQuestion.answers[1]);
@@ -25,7 +27,7 @@ const App = () => {
     }
 
     const submitAnswer = (selectedAns) => {
-        const isCorrect = KanjiToHiraganaService.checkIfCorrectAnswer(question, selectedAns);
+        const isCorrect = KanjiToHiraganaService.checkIfCorrectAnswer(id, selectedAns);
         if(isCorrect){
             setCorrect(correct+1);
         } else {
@@ -47,7 +49,7 @@ const App = () => {
     return (
         <Interface 
             correct={correct} 
-            incorrect={incorrect} 
+            incorrect={incorrect}
             question={question} 
             ans1={ans1} 
             ans2={ans2} 

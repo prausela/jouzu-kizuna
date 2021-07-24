@@ -41,17 +41,18 @@ const withInPositionX = (x, what, collection) => {
 
 const getNextQuestion = (questions) => {
     const question = questions[RandomService.getRandomInt(0, questions.length)];
-    const answerData = KanjiToHiraganaDAO.getPossibleAnswers(question);
+    const answerData = KanjiToHiraganaDAO.getPossibleAnswers(question.id);
     const wrongAnswers = getXDifferentFrom(NUMBER_OF_ANSWERS, answerData.incorrect);
     const correctAnswerPosition = RandomService.getRandomInt(0, NUMBER_OF_ANSWERS);
     return {
-        question,
-        answers: withInPositionX(correctAnswerPosition, answerData.correct, wrongAnswers)
+        id       : question.id,
+        question : question.question,
+        answers  : withInPositionX(correctAnswerPosition, answerData.correct, wrongAnswers)
     };
 }
 
-const checkIfCorrectAnswer = (question, answer) => {
-    const answerData = KanjiToHiraganaDAO.getPossibleAnswers(question);
+const checkIfCorrectAnswer = (id, answer) => {
+    const answerData = KanjiToHiraganaDAO.getPossibleAnswers(id);
     return answer === answerData.correct;
 }
 

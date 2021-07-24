@@ -5,8 +5,9 @@ import AnswerUI from './AnswerUI';
 import MenuUI from './MenuUI';
 
 const Interface = (props) => {
+    const id       = props.id;
     const question = props.question ? props.question : "";
-    const answers = [
+    const answers  = [
         { id: 1, text : props.ans1 ? props.ans1 : "", className : "ans1" }, 
         { id: 2, text : props.ans2 ? props.ans2 : "", className : "ans2" }, 
         { id: 3, text : props.ans3 ? props.ans3 : "", className : "ans3" }, 
@@ -30,6 +31,7 @@ const Interface = (props) => {
                         text={ans.text} 
                         className={ans.className} 
                         key={ans.id} 
+                        id={id}
                         submitAnswer={submitAnswer}
                     />
                 ))
