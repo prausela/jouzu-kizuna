@@ -1,0 +1,17 @@
+.main-menu-interface {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto;
+}
+
+.mode .btn {
+    font-size: 1.5em;
+}
+
+.mode1 {
+    grid-row-start: 2;
+}
+
+.mode2 {
+    grid-row-start: 3;
+}
