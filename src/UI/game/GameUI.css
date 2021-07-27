@@ -1,4 +1,5 @@
-.interface {
+.game-interface {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: auto;
     grid-template-areas: 
