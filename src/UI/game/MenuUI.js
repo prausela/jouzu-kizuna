@@ -9,14 +9,14 @@ const MenuUI = (props) => {
     return (
         <div className="menu d-flex">
             <div className="flex-grow-1 flex-basis-0 px-2">
-                <Button variant="outline-dark" onClick={returnToMenu} active>← Volver</Button>
+                <Button variant="outline-dark" onClick={returnToMenu} active>←<br />Volver</Button>
             </div>
-            <div className="d-flex">
-                <div className="flex-grow-1 px-1"><div className="alert alert-success text-center"><strong>○</strong><br />Bien: {correct}</div></div>
-                <div className="flex-grow-1 px-1"><div className="alert alert-danger text-center"><strong>×</strong><br />Mal: {incorrect}</div></div>
+            <div className="d-flex flex-grow-1">
+                <div className="flex-grow-1 px-1"><div className="alert alert-success text-center">Bien<br />{correct}</div></div>
+                <div className="flex-grow-1 px-1"><div className="alert alert-danger text-center">Mal<br />{incorrect}</div></div>
             </div>
             <div className="flex-grow-1 d-flex justify-content-end align-items-start flex-basis-0 px-2">
-                <Button variant="outline-dark" onClick={resetGame} active>⟲ Reset</Button>
+                <Button variant="outline-dark" onClick={resetGame} active>⟲<br />Reset</Button>
             </div>
         </div>
     )
