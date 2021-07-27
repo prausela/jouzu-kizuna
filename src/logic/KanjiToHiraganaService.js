@@ -1,4 +1,4 @@
-import KanjiToHiraganaDAO from "../data/KanjiToHiraganaDAO";
+import KanjiToHiraganaDAO from "../data/access/KanjiToHiraganaDAO";
 import RandomService from "./RandomService";
 
 const NUMBER_OF_ANSWERS = 4;
