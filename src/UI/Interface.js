@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Interface.css';
 
 // Controllers
-import MainMenuController from './MainMenuController';
-import GameController from './GameController';
+import MainMenuController from './controllers/MainMenuController';
+import GameController from './controllers/GameController';
 
 const Interface = (props) => {
     const interfaces = {
