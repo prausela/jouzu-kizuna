@@ -1,6 +1,12 @@
+// From packages
 import React from 'react';
+
+// Proyect components
 import AnswerUI from './AnswerUI';
 import MenuUI from './MenuUI';
+
+// Style files
+import './GameUI.css';
 
 const GameUI = (props) => {
     const question = props.question ? props.question : "";

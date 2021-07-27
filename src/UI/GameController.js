@@ -1,5 +1,10 @@
+// From packages
 import React, { useEffect, useState, useRef } from 'react';
+
+// Proyect components
 import GameUI from './game/GameUI';
+
+// Services
 import KanjiToHiraganaService from '../logic/KanjiToHiraganaService';
 
 const GameController = () => {
