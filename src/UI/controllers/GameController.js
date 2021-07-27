@@ -1,14 +1,14 @@
 // From packages
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 // Proyect components
 import GameUI from '../game/GameUI';
 
-// Services
-import KanjiToHiraganaService from '../../logic/KanjiToHiraganaService';
-
 const GameController = (props) => {
     let gameData = useRef({});
+
+    const services    = props.services;
+    const currService = props.gameMode;
 
     const [ correct, setCorrect ] = useState(0);
     const [ incorrect, setIncorrect ] = useState(0);
@@ -22,18 +22,18 @@ const GameController = (props) => {
 
     const returnToMenu = props.returnToMenu;
 
-    const loadNextQuestion = () => {
-        const nextQuestion = KanjiToHiraganaService.getNextQuestion(gameData.current.questions);
+    const loadNextQuestion = useCallback(() => {
+        const nextQuestion = services[currService].getNextQuestion(gameData.current.questions);
         setId(nextQuestion.id);
         setQuestion(nextQuestion.question);
         setAns1(nextQuestion.answers[0]);
         setAns2(nextQuestion.answers[1]);
         setAns3(nextQuestion.answers[2]);
         setAns4(nextQuestion.answers[3])
-    }
+    }, [services, currService]);
 
     const submitAnswer = (selectedAns) => {
-        const isCorrect = KanjiToHiraganaService.checkIfCorrectAnswer(id, selectedAns);
+        const isCorrect = services[currService].checkIfCorrectAnswer(id, selectedAns);
         if(isCorrect){
             setCorrect(correct+1);
         } else {
@@ -48,9 +48,9 @@ const GameController = (props) => {
     }
 
     useEffect(() => {
-        gameData.current = KanjiToHiraganaService.startNewGame();
+        gameData.current = services[currService].startNewGame();
         loadNextQuestion()
-    }, []);
+    }, [services, currService, loadNextQuestion]);
 
     return (
         <GameUI 

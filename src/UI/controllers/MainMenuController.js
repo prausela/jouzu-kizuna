@@ -2,10 +2,12 @@ import React from 'react';
 import MainMenuUI from '../main_menu/MainMenuUI';
 
 const MainMenuController = (props) => {
-    const switchToGame = () => props.switchToGameMode("game");
+    const switchToKanjiToHiraganMode    = () => props.switchToGameMode("kanji_to_hiragana_game");
+    const switchToTeFormMode            = () => props.switchToGameMode("te_form_game");
     return (
         <MainMenuUI 
-            switchToGame={switchToGame}
+            switchToKanjiToHiraganMode={switchToKanjiToHiraganMode}
+            switchToTeFormMode={switchToTeFormMode}
         />
     )
 }

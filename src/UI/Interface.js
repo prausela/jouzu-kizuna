@@ -11,15 +11,23 @@ import GameController from './controllers/GameController';
 
 const Interface = (props) => {
     const interfaces = {
-        "main_menu" : {
+        "main_menu"    : {
             className   : "main-menu-interface",
             controller  : MainMenuController
         },
-        "game"      : {
+        "kanji_to_hiragana_game" : {
             className   : "game-interface",
+            controller  : GameController
+        },
+        "te_form_game"          : {
+            className   : "game-interface te-form-game-interface",
             controller  : GameController
         }
     }
+
+    const services      = props.services;
+    const gameMode      = props.gameMode;
+    const setGameMode   = props.setGameMode;
 
     const [ currInterface, setCurrInterface ] = useState("main_menu");
 
@@ -27,6 +35,7 @@ const Interface = (props) => {
     const Controller    = interfaces[currInterface].controller
 
     const switchToGameMode = (gameMode) => {
+        setGameMode(gameMode);
         setCurrInterface(gameMode);
     }
 
@@ -36,7 +45,9 @@ const Interface = (props) => {
 
     return (
         <div className={className}>
-            <Controller 
+            <Controller
+                services={services} 
+                gameMode={gameMode}
                 returnToMenu={returnToMenu}
                 switchToGameMode={switchToGameMode}
             />

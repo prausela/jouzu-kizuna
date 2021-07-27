@@ -7,6 +7,7 @@ import MenuUI from './MenuUI';
 
 // Style files
 import './GameUI.css';
+import './TeFormUI.css'
 
 const GameUI = (props) => {
     const question = props.question ? props.question : "";
