@@ -20,12 +20,14 @@ const GameUI = (props) => {
     const incorrect    = props.incorrect;
     const submitAnswer = props.submitAnswer;
     const resetGame    = props.resetGame;
+    const returnToMenu = props.returnToMenu;
     return (
         <>
             <MenuUI 
                 correct={correct} 
                 incorrect={incorrect}
                 resetGame={resetGame}
+                returnToMenu={returnToMenu}
             />
             <div className="question">{question}</div>
             {

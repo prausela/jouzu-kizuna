@@ -30,9 +30,14 @@ const Interface = (props) => {
         setCurrInterface(gameMode);
     }
 
+    const returnToMenu = () => {
+        setCurrInterface("main_menu");
+    }
+
     return (
         <div className={className}>
             <Controller 
+                returnToMenu={returnToMenu}
                 switchToGameMode={switchToGameMode}
             />
         </div>

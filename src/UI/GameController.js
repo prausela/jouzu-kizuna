@@ -7,7 +7,7 @@ import GameUI from './game/GameUI';
 // Services
 import KanjiToHiraganaService from '../logic/KanjiToHiraganaService';
 
-const GameController = () => {
+const GameController = (props) => {
     let gameData = useRef({});
 
     const [ correct, setCorrect ] = useState(0);
@@ -19,6 +19,8 @@ const GameController = () => {
     const [ ans2, setAns2 ] = useState("");
     const [ ans3, setAns3 ] = useState("");
     const [ ans4, setAns4 ] = useState("");
+
+    const returnToMenu = props.returnToMenu;
 
     const loadNextQuestion = () => {
         const nextQuestion = KanjiToHiraganaService.getNextQuestion(gameData.current.questions);
@@ -61,6 +63,7 @@ const GameController = () => {
             ans4={ans4} 
             submitAnswer={submitAnswer}
             resetGame={resetGame}
+            returnToMenu={returnToMenu}
         />
     )
 }
