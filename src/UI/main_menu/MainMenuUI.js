@@ -12,7 +12,7 @@ const MainMenuUI = (props) => {
                 <Button variant="outline-dark" onClick={switchToKanjiToHiraganMode} active>Kanjis</Button>
             </div>
             <div className="flex-grow-1 mode mode2 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToTeFormMode} disabled>Forma て<br /><em>(Pr&oacute;ximamente)</em></Button>
+                <Button variant="outline-dark" onClick={switchToTeFormMode} active>Forma て</Button>
             </div>
         </>
     )
