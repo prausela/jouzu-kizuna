@@ -132,9 +132,8 @@
     }, {
         "id"                : "10",
         "question"          : "ききます",
-        "correct_answer"    : "ねて\n(II グループ)",
+        "correct_answer"    : "きいて\n(I グループ)",
         "other_answers"     : [
-            "きいて\n(I グループ)",
             "きいで\n(I グループ)",
             "きんで\n(I グループ)",
             "きって\n(I グループ)",
@@ -249,13 +248,13 @@
     }, {
         "id"                : "19",
         "question"          : "います",
-        "correct_answer"    : "いって\n(I グループ)",
+        "correct_answer"    : "いて\n(II グループ)",
         "other_answers"     : [
             "いいて\n(I グループ)",
             "いいで\n(I グループ)",
             "いんで\n(I グループ)",
+            "いって\n(I グループ)",
             "いして\n(I グループ)",
-            "いて\n(II グループ)",
             "いして\n(III グループ)",
             "いて\n(III グループ)"
         ]
