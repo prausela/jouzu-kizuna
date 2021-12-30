@@ -381,7 +381,7 @@
     }, {
         "id"                : "29",
         "question"          : "まちます",
-        "correct_answer"    : "まつ\n(I グループ)",
+        "correct_answer"    : "またない\n(I グループ)",
         "other_answers"     : [
             "ましゃない\n(I グループ)",
             "まちゃない\n(I グループ)",
