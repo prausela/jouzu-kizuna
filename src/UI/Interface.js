@@ -22,6 +22,18 @@ const Interface = (props) => {
         "te_form_game"          : {
             className   : "game-interface te-form-game-interface",
             controller  : GameController
+        },
+        "dictionary_form_game"  : {
+            className   : "game-interface te-form-game-interface",
+            controller  : GameController
+        },
+        "nai_form_game"  : {
+            className   : "game-interface te-form-game-interface",
+            controller  : GameController
+        },
+        "ta_form_game"  : {
+            className   : "game-interface te-form-game-interface",
+            controller  : GameController
         }
     }
 
