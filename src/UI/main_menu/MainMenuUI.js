@@ -15,16 +15,16 @@ const MainMenuUI = (props) => {
                 <Button variant="outline-dark" onClick={switchToKanjiToHiraganMode} active>Kanjis</Button>
             </div>
             <div className="flex-grow-1 mode mode2 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToTeFormMode} active>Forma て</Button>
+                <Button variant="outline-dark" onClick={switchToTeFormMode} active>て</Button>
             </div>
             <div className="flex-grow-1 mode mode3 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToDictionaryFormMode} active>Forma じしょ</Button>
+                <Button variant="outline-dark" onClick={switchToDictionaryFormMode} active>じしょ</Button>
             </div>
             <div className="flex-grow-1 mode mode4 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToNaiFormMode} active>Forma ない</Button>
+                <Button variant="outline-dark" onClick={switchToNaiFormMode} active>ない</Button>
             </div>
             <div className="flex-grow-1 mode mode5 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToTaFormMode} active>Forma た</Button>
+                <Button variant="outline-dark" onClick={switchToTaFormMode} active>た</Button>
             </div>
         </>
     )
