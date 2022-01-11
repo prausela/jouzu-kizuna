@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/jouzu/static/css/main.6f158536.chunk.css",
+    "main.css": "/jouzu/static/css/main.3616ba03.chunk.css",
     "main.js": "/jouzu/static/js/main.31a7b67c.chunk.js",
     "main.js.map": "/jouzu/static/js/main.31a7b67c.chunk.js.map",
     "runtime-main.js": "/jouzu/static/js/runtime-main.a36342c9.js",
@@ -14,14 +14,14 @@
     "service-worker.js": "/jouzu/service-worker.js",
     "service-worker.js.map": "/jouzu/service-worker.js.map",
     "static/css/2.4be38407.chunk.css.map": "/jouzu/static/css/2.4be38407.chunk.css.map",
-    "static/css/main.6f158536.chunk.css.map": "/jouzu/static/css/main.6f158536.chunk.css.map",
+    "static/css/main.3616ba03.chunk.css.map": "/jouzu/static/css/main.3616ba03.chunk.css.map",
     "static/js/2.6c049894.chunk.js.LICENSE.txt": "/jouzu/static/js/2.6c049894.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a36342c9.js",
     "static/css/2.4be38407.chunk.css",
     "static/js/2.6c049894.chunk.js",
-    "static/css/main.6f158536.chunk.css",
+    "static/css/main.3616ba03.chunk.css",
     "static/js/main.31a7b67c.chunk.js"
   ]
 }
