@@ -1,7 +1,7 @@
 [
     {
         "id"                : "0",
-        "question"          : "いま　あめが　＿＿。",
+        "question"          : "いま　あめが　＿。",
         "correct_answer"    : "ふって います",
         "other_answers"     : [
             "ふって",
@@ -17,7 +17,7 @@
         ]
     }, {
         "id"                : "1",
-        "question"          : "にもつを　＿＿　ください。",
+        "question"          : "にもつを　＿　ください。",
         "correct_answer"    : "あけて",
         "other_answers"     : [
             "あける",
@@ -26,7 +26,7 @@
         ]
     }, {
         "id"                : "2",
-        "question"          : "パウラさんを　＿＿います。",
+        "question"          : "パウラさんを　＿います。",
         "correct_answer"    : "しって",
         "other_answers"     : [
             "しらない",
@@ -35,7 +35,7 @@
         ]
     }, {
         "id"                : "3",
-        "question"          : "ブルーノを　＿＿。",
+        "question"          : "ブルーノを　＿。",
         "correct_answer"    : "しりません",
         "other_answers"     : [
             "しって　いません",
@@ -44,7 +44,7 @@
         ]
     }, {
         "id"                : "4",
-        "question"          : "あしたも　＿＿か。",
+        "question"          : "あしたも　＿か。",
         "correct_answer"    : "きましょう",
         "other_answers"     : [
             "こないましょう",
@@ -54,7 +54,7 @@
         ]
     }, {
         "id"                : "5",
-        "question"          : "しゃしんを　＿＿　いいです。",
+        "question"          : "しゃしんを　＿　いいです。",
         "correct_answer"    : "とっても",
         "other_answers"     : [
             "とる　ことが",
@@ -66,7 +66,7 @@
         ]
     }, {
         "id"                : "6",
-        "question"          : "ここで　たばこを　＿＿　いけません。",
+        "question"          : "ここで　たばこを　＿　いけません。",
         "correct_answer"    : "すっては",
         "other_answers"     : [
             "すう　ことが",
@@ -78,7 +78,7 @@
         ]
     }, {
         "id"                : "7",
-        "question"          : "あした　ともだちに　＿＿、いしょうに　ばんごはんを　＿＿。",
+        "question"          : "あした　ともだちに　＿、いしょうに　ばんごはんを　＿。",
         "correct_answer"    : "あって・たべます",
         "other_answers"     : [
             "あいます・たべます",
@@ -90,7 +90,7 @@
         ]
     }, {
         "id"                : "8",
-        "question"          : "おかねを　＿＿から、かいものに　いきます。かいものに　＿＿　まえに、おかねを　おろします。",
+        "question"          : "おかねを　＿から、かいものに　いきます。かいものに　＿　まえに、おかねを　おろします。",
         "correct_answer"    : "おろして・いく",
         "other_answers"     : [
             "おろす・いって",
@@ -100,7 +100,7 @@
         ]
     }, {
         "id"                : "9",
-        "question"          : "だいしょうぶですから、＿＿　ください。",
+        "question"          : "だいしょうぶですから、＿　ください。",
         "correct_answer"    : "しんぱいしないで",
         "other_answers"     : [
             "しんぱいして",
@@ -110,7 +110,7 @@
         ]
     }, {
         "id"                : "10",
-        "question"          : "くすりを　＿＿ければ　なりません。",
+        "question"          : "くすりを　＿ければ　なりません。",
         "correct_answer"    : "のまな",
         "other_answers"     : [
             "のむな",
@@ -120,7 +120,7 @@
         ]
     }, {
         "id"                : "11",
-        "question"          : "いい　てんきです。かさを　＿＿が　かさは　べんりです。",
+        "question"          : "いい　てんきです。かさを　＿が　かさは　べんりです。",
         "correct_answer"    : "とって　いかなくても　いいです",
         "other_answers"     : [
             "とって　いっても　いいです",
@@ -132,7 +132,7 @@
         ]
     }, {
         "id"                : "12",
-        "question"          : "シモさんは　かんじを　＿＿　ことが　できます。",
+        "question"          : "シモさんは　かんじを　＿　ことが　できます。",
         "correct_answer"    : "よむ",
         "other_answers"     : [
             "よま",
@@ -143,7 +143,7 @@
         ]
     }, {
         "id"                : "13",
-        "question"          : "わたしのしゅみは　おんがくを　＿＿　ことです。",
+        "question"          : "わたしのしゅみは　おんがくを　＿　ことです。",
         "correct_answer"    : "きく",
         "other_answers"     : [
             "きき",
@@ -154,7 +154,7 @@
         ]
     }, {
         "id"                : "14",
-        "question"          : "＿＿　まえに、てを　あらいます。",
+        "question"          : "＿　まえに、てを　あらいます。",
         "correct_answer"    : "しょくじする",
         "other_answers"     : [
             "しょくじして",
@@ -163,7 +163,7 @@
         ]
     }, {
         "id"                : "15",
-        "question"          : "うまに　＿＿　ことが　あります。",
+        "question"          : "うまに　＿　ことが　あります。",
         "correct_answer"    : "のった",
         "other_answers"     : [
             "のって",
@@ -172,7 +172,7 @@
         ]
     }, {
         "id"                : "16",
-        "question"          : "きのうは　ほんを　＿＿り、レポートを　＿＿。",
+        "question"          : "きのうは　ほんを　＿り、レポートを　＿。",
         "correct_answer"    : "よんだ・かいたり　しました",
         "other_answers"     : [
             "よんで・かいて　します",
