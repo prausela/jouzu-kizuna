@@ -34,6 +34,10 @@ const Interface = (props) => {
         "ta_form_game"  : {
             className   : "game-interface te-form-game-interface",
             controller  : GameController
+        },
+        "guess_form_game" : {
+            className   : "game-interface te-form-game-interface",
+            controller  : GameController
         }
     }
 

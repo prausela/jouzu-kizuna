@@ -9,6 +9,7 @@ const MainMenuUI = (props) => {
     const switchToDictionaryFormMode    = props.switchToDictionaryFormMode;
     const switchToNaiFormMode           = props.switchToNaiFormMode;
     const switchToTaFormMode            = props.switchToTaFormMode;
+    const switchToGuessFormMode         = props.switchToGuessFormMode;
     return (
         <>
             <div className="flex-grow-1 mode mode1 d-grid p-2">
@@ -25,6 +26,9 @@ const MainMenuUI = (props) => {
             </div>
             <div className="flex-grow-1 mode mode5 d-grid p-2">
                 <Button variant="outline-dark" onClick={switchToTaFormMode} active>た</Button>
+            </div>
+            <div className="flex-grow-1 mode mode6 d-grid p-2">
+                <Button variant="outline-dark" onClick={switchToGuessFormMode} active>Forma Correcta</Button>
             </div>
         </>
     )

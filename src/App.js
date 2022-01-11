@@ -7,13 +7,15 @@ import TeFormService from './logic/TeFormService';
 import DictionaryFormService from './logic/DictionaryFormService';
 import NaiFormService from './logic/NaiFormService';
 import TaFormService from './logic/TaFormService';
+import GuessFormService from './logic/GuessFormService';
 
 const services = {
     "kanji_to_hiragana_game" : KanjiToHiraganaService,
     "te_form_game"           : TeFormService,
     "dictionary_form_game"   : DictionaryFormService,
     "nai_form_game"          : NaiFormService,
-    "ta_form_game"           : TaFormService
+    "ta_form_game"           : TaFormService,
+    "guess_form_game"        : GuessFormService
 };
 
 const App = () => {
