@@ -19,6 +19,9 @@ const GameUI = (props) => {
     ]
     const correct      = props.correct;
     const incorrect    = props.incorrect;
+    const isCorrect    = props.isCorrect;
+    const isIncorrect  = props.isIncorrect;
+    const ansId        = props.ansId;
     const submitAnswer = props.submitAnswer;
     const resetGame    = props.resetGame;
     const returnToMenu = props.returnToMenu;
@@ -32,14 +35,18 @@ const GameUI = (props) => {
             />
             <div className="question">{question}</div>
             {
-                answers.map(ans => (
+                answers.map(ans => {
+                    return (
                     <AnswerUI 
                         text={ans.text} 
                         className={ans.className} 
+                        isCorrect={isCorrect && ansId === ans.id}
+                        isIncorrect={isIncorrect && ansId === ans.id}
                         key={ans.id}
+                        id={ans.id}
                         submitAnswer={submitAnswer}
                     />
-                ))
+                )})
             }
         </>
     )
