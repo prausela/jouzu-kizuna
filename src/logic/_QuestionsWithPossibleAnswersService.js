@@ -37,8 +37,13 @@ const withInPositionX = (x, what, collection) => {
     return newCollection;
 }
 
-const getNextQuestion = (store, number_of_answers, questions) => {
-    const question = questions[RandomService.getRandomInt(0, questions.length)];
+const getNextQuestion = (store, number_of_answers, gameData) => {
+    if(gameData.questions.length <= 0){
+        gameData.questions = startNewGame(store).questions;
+    }
+    const chosenIndex = RandomService.getRandomInt(0, gameData.questions.length);
+    const question = gameData.questions[chosenIndex];
+    gameData.questions.splice(chosenIndex, 1);
     const answerData = store.getPossibleAnswers(question.id);
     const wrongAnswers = getXDifferentFrom(number_of_answers, answerData.incorrect);
     const correctAnswerPosition = RandomService.getRandomInt(0, number_of_answers);

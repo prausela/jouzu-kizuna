@@ -23,7 +23,7 @@ const GameController = (props) => {
     const returnToMenu = props.returnToMenu;
 
     const loadNextQuestion = useCallback(() => {
-        const nextQuestion = services[currService].getNextQuestion(gameData.current.questions);
+        const nextQuestion = services[currService].getNextQuestion(gameData.current);
         setId(nextQuestion.id);
         setQuestion(nextQuestion.question);
         setAns1(nextQuestion.answers[0]);
