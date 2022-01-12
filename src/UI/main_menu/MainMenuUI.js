@@ -10,24 +10,28 @@ const MainMenuUI = (props) => {
     const switchToNaiFormMode           = props.switchToNaiFormMode;
     const switchToTaFormMode            = props.switchToTaFormMode;
     const switchToGuessFormMode         = props.switchToGuessFormMode;
+    const switchToCountersMode          = props.switchToCountersMode;
     return (
         <>
             <div className="flex-grow-1 mode mode1 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToKanjiToHiraganMode} active>Kanjis</Button>
+                <Button variant="outline-dark" onClick={switchToCountersMode} active>Contadores</Button>
             </div>
             <div className="flex-grow-1 mode mode2 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToTeFormMode} active>て</Button>
+                <Button variant="outline-dark" onClick={switchToKanjiToHiraganMode} active>Kanjis</Button>
             </div>
             <div className="flex-grow-1 mode mode3 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToDictionaryFormMode} active>じしょ</Button>
+                <Button variant="outline-dark" onClick={switchToTeFormMode} active>て</Button>
             </div>
             <div className="flex-grow-1 mode mode4 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToNaiFormMode} active>ない</Button>
+                <Button variant="outline-dark" onClick={switchToDictionaryFormMode} active>じしょ</Button>
             </div>
             <div className="flex-grow-1 mode mode5 d-grid p-2">
-                <Button variant="outline-dark" onClick={switchToTaFormMode} active>た</Button>
+                <Button variant="outline-dark" onClick={switchToNaiFormMode} active>ない</Button>
             </div>
             <div className="flex-grow-1 mode mode6 d-grid p-2">
+                <Button variant="outline-dark" onClick={switchToTaFormMode} active>た</Button>
+            </div>
+            <div className="flex-grow-1 mode mode7 d-grid p-2">
                 <Button variant="outline-dark" onClick={switchToGuessFormMode} active>Forma Correcta</Button>
             </div>
         </>

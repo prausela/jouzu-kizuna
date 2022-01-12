@@ -8,6 +8,7 @@ import DictionaryFormService from './logic/DictionaryFormService';
 import NaiFormService from './logic/NaiFormService';
 import TaFormService from './logic/TaFormService';
 import GuessFormService from './logic/GuessFormService';
+import CountersService from './logic/CountersService';
 
 const services = {
     "kanji_to_hiragana_game" : KanjiToHiraganaService,
@@ -15,7 +16,8 @@ const services = {
     "dictionary_form_game"   : DictionaryFormService,
     "nai_form_game"          : NaiFormService,
     "ta_form_game"           : TaFormService,
-    "guess_form_game"        : GuessFormService
+    "guess_form_game"        : GuessFormService,
+    "counters_game"          : CountersService
 };
 
 const App = () => {

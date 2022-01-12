@@ -1,6 +1,6 @@
 .main-menu-interface {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -15,10 +15,11 @@
 
 .mode2 {
     grid-row-start: 3;
+    grid-column: 1/-1;
 }
 
 .mode3 {
-    grid-row-start: 3;
+    grid-row-start: 4;
 }
 
 .mode4 {
@@ -26,10 +27,14 @@
 }
 
 .mode5 {
-    grid-row-start: 4;
+    grid-row-start: 5;
 }
 
 .mode6 {
     grid-row-start: 5;
+}
+
+.mode7 {
+    grid-row-start: 6;
     grid-column: 1/-1;
 }

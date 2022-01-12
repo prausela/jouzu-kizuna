@@ -8,6 +8,7 @@ const MainMenuController = (props) => {
     const switchToNaiFormMode           = () => props.switchToGameMode("nai_form_game");
     const switchToTaFormMode            = () => props.switchToGameMode("ta_form_game");
     const switchToGuessFormMode         = () => props.switchToGameMode("guess_form_game");
+    const switchToCountersMode          = () => props.switchToGameMode("counters_game");
     return (
         <MainMenuUI 
             switchToKanjiToHiraganMode={switchToKanjiToHiraganMode}
@@ -16,6 +17,7 @@ const MainMenuController = (props) => {
             switchToNaiFormMode={switchToNaiFormMode}
             switchToTaFormMode={switchToTaFormMode}
             switchToGuessFormMode={switchToGuessFormMode}
+            switchToCountersMode={switchToCountersMode}
         />
     )
 }
