@@ -22,14 +22,18 @@
     margin: auto 0;
 }
 
-.question{
+.question {
     grid-area: q;
     margin: auto auto;
+    padding: 0.25em;
     font-size: 5em;
+    word-break: keep-all;
 }
 
 .ans .btn {
     font-size: 1.5em;
+    white-space: pre-line;
+    word-break: keep-all;
 }
 
 .ans1{
