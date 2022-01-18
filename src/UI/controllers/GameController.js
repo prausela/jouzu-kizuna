@@ -49,10 +49,10 @@ const GameController = (props) => {
                 setIsIncorrect(true);
             }
             setTimeout(() => {
-                loadNextQuestion();
                 setAnsId(undefined);
                 setIsIncorrect(false);
                 setIsCorrect(false);
+                loadNextQuestion();
             }, 1000);
         }
 
