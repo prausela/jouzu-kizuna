@@ -52,7 +52,7 @@ const Interface = (props) => {
     const [ currInterface, setCurrInterface ] = useState("main_menu");
 
     const className     = "interface " + interfaces[currInterface].className;
-    const Controller    = interfaces[currInterface].controller
+    const Controller    = interfaces[currInterface].controller;
 
     const switchToGameMode = (gameMode) => {
         setGameMode(gameMode);
