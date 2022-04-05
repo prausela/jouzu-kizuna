@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/jouzu/static/css/main.d51523c7.chunk.css",
-    "main.js": "/jouzu/static/js/main.ea2004ce.chunk.js",
-    "main.js.map": "/jouzu/static/js/main.ea2004ce.chunk.js.map",
+    "main.css": "/jouzu/static/css/main.ee58315a.chunk.css",
+    "main.js": "/jouzu/static/js/main.1cc8836f.chunk.js",
+    "main.js.map": "/jouzu/static/js/main.1cc8836f.chunk.js.map",
     "runtime-main.js": "/jouzu/static/js/runtime-main.73a4e816.js",
     "runtime-main.js.map": "/jouzu/static/js/runtime-main.73a4e816.js.map",
     "static/css/2.0a9ec390.chunk.css": "/jouzu/static/css/2.0a9ec390.chunk.css",
@@ -14,14 +14,14 @@
     "service-worker.js": "/jouzu/service-worker.js",
     "service-worker.js.map": "/jouzu/service-worker.js.map",
     "static/css/2.0a9ec390.chunk.css.map": "/jouzu/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.d51523c7.chunk.css.map": "/jouzu/static/css/main.d51523c7.chunk.css.map",
+    "static/css/main.ee58315a.chunk.css.map": "/jouzu/static/css/main.ee58315a.chunk.css.map",
     "static/js/2.54092cee.chunk.js.LICENSE.txt": "/jouzu/static/js/2.54092cee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.73a4e816.js",
     "static/css/2.0a9ec390.chunk.css",
     "static/js/2.54092cee.chunk.js",
-    "static/css/main.d51523c7.chunk.css",
-    "static/js/main.ea2004ce.chunk.js"
+    "static/css/main.ee58315a.chunk.css",
+    "static/js/main.1cc8836f.chunk.js"
   ]
 }
