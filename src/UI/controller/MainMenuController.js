@@ -1,5 +1,5 @@
 import React from 'react';
-import MainMenuUI from '../views/main_menu/MainMenuUI';
+import MainMenuUI from '../view/Menu/MainMenuUI';
 
 const MainMenuController = (props) => {
     const switchToKanjiToHiraganMode    = () => props.switchToGameMode("kanji_to_hiragana_game");
