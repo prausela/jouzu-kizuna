@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 // Proyect components
-import GameUI from '../game/GameUI';
+import GameUI from '../views/game/GameUI';
 
 const GameController = (props) => {
     let gameData = useRef({});
