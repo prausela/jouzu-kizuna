@@ -18,7 +18,8 @@ const MenuContextActionUI = ({icon, title, hasCtxAction, className, style}) => {
                                 minHeight: "4.2rem",
                                 maxHeight: "4.2rem",
                                 borderSizing: "border-box",
-                                borderRadius: 0
+                                borderRadius: 0,
+                                clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)"
                             }}
                         >
                             <div><FontAwesomeIcon icon={icon} className="h3 m-0"/></div>
