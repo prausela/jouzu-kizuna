@@ -1,19 +1,44 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Button } from "react-bootstrap";
 
-const MenuContextActionUI = () => {
+const MenuContextActionUI = ({icon, title, hasCtxAction, className, style}) => {
     return (
-        <div className="bg-dark d-inline-block p-2">
-            <div className="d-flex flex-column align-items-center">
-                <div className="">
-                    <FontAwesomeIcon icon={faArrowLeft} size="lg" inverse/>
-                </div>
-                <div className="text-white">
-                    Volver
-                </div>
-            </div>
-        </div>
+        <>
+            {
+                hasCtxAction ? (
+                    <div 
+                        className={className}
+                        style={style}
+                    >
+                        <Button 
+                            variant="dark"
+                            className="align-middle"
+                            style={{
+                                minHeight: "4.2rem",
+                                maxHeight: "4.2rem",
+                                borderSizing: "border-box",
+                                borderRadius: 0
+                            }}
+                        >
+                            <div><FontAwesomeIcon icon={icon} className="h3 m-0"/></div>
+                            <div><small>{title}</small></div>
+                        </Button>
+                    </div>
+                ) : (
+                    <span
+                        className={className + " align-middle"}
+                        style={{
+                            minHeight: "4.2rem",
+                            maxHeight: "4.2rem",
+                            ...style
+                        }}
+                    />
+                )
+            }
+        </>
+        
+        
     )
 }
 
