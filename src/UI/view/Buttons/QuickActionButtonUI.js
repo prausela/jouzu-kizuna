@@ -1,7 +1,7 @@
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useLayoutEffect, useRef, useState } from "react";
+
 import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const QuickActionButtonUI = ({icon, name, show, disabled, className, style}) => {
     const ref = useRef(null);
@@ -34,7 +34,7 @@ const QuickActionButtonUI = ({icon, name, show, disabled, className, style}) => 
                 ...buttonSize
             }}>
                 {
-                    icon ? <FontAwesomeIcon icon={icon} className="m-0 display-3"/> : ""
+                    icon ? <FontAwesomeIcon icon={icon} className="m-0 display-4"/> : ""
                 }
             </div>
             <div className="mt-2">
