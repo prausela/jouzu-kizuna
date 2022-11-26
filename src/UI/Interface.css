@@ -13,3 +13,24 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+.text-slightly-visible {
+    color: #adb5bd;
+}
+
+.bounds {
+    max-width: 50rem;
+    min-width: 25rem;
+}
+
+.text-big {
+    font-size: 1.475rem;
+}
+
+.text-very-big {
+    font-size: 2.2rem;
+}
+
+.text-extremely-big {
+    font-size: 2.4rem;
+}
