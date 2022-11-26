@@ -11,9 +11,9 @@ const MenuContextUI = ({action, title, icon, className}) => {
                 hasCtxAction={action ? true : false}
                 className="d-inline-block"
             />
-            <h1 className="d-inline-block position-absolute start-50 top-50 translate-middle display-3 m-0 text-center">{title}</h1>
+            <h1 className="d-inline-block position-absolute start-50 top-50 translate-middle text-extremely-big m-0 text-center fw-normal">{title}</h1>
             <div className="d-inline-block position-absolute end-0 top-50 translate-middle-y align-middle text-end">
-                <FontAwesomeIcon icon={icon} className="display-4 m-0 me-2"/>
+                <FontAwesomeIcon icon={icon} className="text-very-big m-0 me-2"/>
             </div>
         </div>
     )
