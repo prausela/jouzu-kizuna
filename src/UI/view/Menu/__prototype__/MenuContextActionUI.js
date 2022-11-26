@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const MenuContextActionUI = ({icon, title, hasCtxAction, className, style}) => {
+const MenuContextActionUI = ({icon, title, onClick, hasCtxAction, className, style}) => {
     return (
         <>
             {
@@ -14,6 +14,7 @@ const MenuContextActionUI = ({icon, title, hasCtxAction, className, style}) => {
                         <Button 
                             variant="dark"
                             className="align-middle"
+                            onClick={onClick}
                             style={{
                                 minHeight: "4.2rem",
                                 maxHeight: "4.2rem",

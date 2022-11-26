@@ -8,7 +8,7 @@ import './Interface.css';
 // Controllers
 import MainMenuController from './controller/MainMenuController';
 import GameController from './controller/GameController';
-import MainController from './controller/MainController';
+import MenuController from './controller/Menu/MenuController';
 
 const Interface = (props) => {
     const interfaces = {
@@ -18,7 +18,7 @@ const Interface = (props) => {
         },
         "main" : {
             className   : "",
-            controller  : MainController
+            controller  : MenuController
         },
         "kanji_to_hiragana_game" : {
             className   : "game-interface",

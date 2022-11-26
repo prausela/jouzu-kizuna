@@ -20,7 +20,6 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
     useLayoutEffect(() => {
         const handleScroll  = () => {
             const currentScrollPosition = document.documentElement.scrollHeight - document.documentElement.scrollTop;
-            console.log(currentScrollPosition, document.documentElement.scrollHeight, document.documentElement.scrollTop, document.documentElement, currentScrollPosition === 0);
             setShowScrollTop(document.documentElement.scrollTop === 0);
             setShowScrollBottom(currentScrollPosition === document.documentElement.clientHeight);
         }

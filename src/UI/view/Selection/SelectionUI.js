@@ -8,10 +8,11 @@ const MenuSelectionUI = ({options, className, style}) => {
             
             <div className="flex-grow-1">
                 {
-                    options ? options.map(option => (
+                    options ? options.map((option, index) => (
                         <SelectionButtonUI 
                             value={option ? option.value : undefined}
                             onClick={option ? option.onClick : undefined}
+                            key={index}
                         />
                     )) : ""
                 }

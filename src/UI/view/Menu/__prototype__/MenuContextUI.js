@@ -8,6 +8,7 @@ const MenuContextUI = ({action, title, icon, className}) => {
             <MenuContextActionUI 
                 icon={action ? action.icon : undefined}
                 title={action ? action.title : undefined}
+                onClick={action ? action.onClick : undefined}
                 hasCtxAction={action ? true : false}
                 className="d-inline-block"
             />

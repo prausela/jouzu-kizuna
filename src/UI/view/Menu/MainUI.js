@@ -9,16 +9,6 @@ const context = {
     "icon"   : faHome
 }
 
-const selection = [
-    {
-        "value" : "レベル　一"
-    }, {
-        "value" : "レベル　ニ"
-    }, {
-        "value" : "レベル　三"
-    }
-]
-
 const quickActions = [
     {
         "name"      : "Nuevo",
@@ -43,7 +33,7 @@ const quickActions = [
     }
 ]
 
-const MainUI = () => {
+const MainUI = ({selection}) => {
     return (
         <MenuUI 
             context={context}

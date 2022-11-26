@@ -5,15 +5,6 @@ import MenuUI from './__prototype__/MenuUI';
 import { faArrowLeft, faList } from '@fortawesome/free-solid-svg-icons';
 import { faPlus, faHashtag, faMinus, faGear } from '@fortawesome/free-solid-svg-icons';
 
-const context = {
-    "title"  : "レベル 1",
-    "icon"   : faList,
-    "action" : {
-        "title" : "Volver",
-        "icon"  : faArrowLeft
-    }
-}
-
 const quickActions = [
     {
         "name"      : "Nuevo",
@@ -38,10 +29,22 @@ const quickActions = [
     }
 ]
 
-const SelectSetUI = () => {
+const SelectSetUI = ({title, selection, switchToMain}) => {
+
+    const context = {
+        "title"  : title,
+        "icon"   : faList,
+        "action" : {
+            "title"   : "Volver",
+            "icon"    : faArrowLeft,
+            "onClick" : switchToMain
+        }
+    }
+
     return (
         <MenuUI 
             context={context}
+            selection={selection}
             quickActions={quickActions}
         />
     )
