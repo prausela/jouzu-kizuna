@@ -1,19 +1,13 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import useWidth from "../Hooks/useWidth";
+
 const QuickActionButtonUI = ({icon, name, show, disabled, className, style}) => {
     const ref = useRef(null);
-    const [height, setHeight] = useState(0);
-
-    useLayoutEffect(() => {
-
-        const domWidth = ref.current.offsetWidth;
-
-        setHeight(domWidth);
-
-    }, []);
+    const height = useWidth(ref);
 
     const buttonSize = height > 0 ? (
         {
@@ -34,7 +28,7 @@ const QuickActionButtonUI = ({icon, name, show, disabled, className, style}) => 
                 ...buttonSize
             }}>
                 {
-                    icon ? <FontAwesomeIcon icon={icon} className="m-0 display-4"/> : ""
+                    icon ? <FontAwesomeIcon icon={icon} className="m-0 text-very-big"/> : ""
                 }
             </div>
             <div className="mt-2">
