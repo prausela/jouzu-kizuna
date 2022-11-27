@@ -5,7 +5,6 @@ import SelectionButtonUI from "../Buttons/SelectionButtonUI";
 const MenuSelectionUI = ({options, className, style}) => {
     return (
         <div className={(className ? className + " " : "") + "px-5 d-flex flex-column"} style={style}>
-            
             <div className="flex-grow-1">
                 {
                     options ? options.map((option, index) => (

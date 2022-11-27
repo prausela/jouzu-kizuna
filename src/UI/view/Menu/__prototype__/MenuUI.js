@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import MenuContextUI from "./MenuContextUI";
 import MenuNotifierUI from "./MenuNotifierUI";
@@ -17,19 +17,20 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
     const [showScrollTop, setShowScrollTop]         = useState(true);
     const [showScrollBottom, setShowScrollBottom]   = useState(true);
 
-    useLayoutEffect(() => {
-        const handleScroll  = () => {
-            const currentScrollPosition = document.documentElement.scrollHeight - document.documentElement.scrollTop;
-            setShowScrollTop(document.documentElement.scrollTop === 0);
-            setShowScrollBottom(currentScrollPosition === document.documentElement.clientHeight);
-        }
+    const handleScroll  = () => {
+        setShowScrollTop(document.documentElement.scrollTop === 0);
+        setShowScrollBottom(document.documentElement.scrollHeight <= document.documentElement.clientHeight + Math.ceil(document.documentElement.scrollTop));
+    }
 
+    useEffect(() => {
         handleScroll();
-    
+    }, [topMenuHeight, bottomMenuHeight]);
+
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [])
     
 
     return (
