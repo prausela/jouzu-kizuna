@@ -15,7 +15,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
     const bottomMenuHeight  = useHeight(bottomMenuRef);
 
     const [showScrollTop, setShowScrollTop]         = useState(true);
-    const [showScrollBottom, setShowScrollBottom]   = useState(false);
+    const [showScrollBottom, setShowScrollBottom]   = useState(true);
 
     useLayoutEffect(() => {
         const handleScroll  = () => {
