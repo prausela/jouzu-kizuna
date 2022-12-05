@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 import MenuContextUI from "./MenuContextUI";
 import MenuNotifierUI from "./MenuNotifierUI";
@@ -7,6 +7,7 @@ import MenuSelectionUI from "../../Selection/SelectionUI";
 import SelectionScrollUI from "../../Selection/SelectionScrollUI";
 import useHeight from "../../Hooks/useHeight";
 import useResizeObserver from "@react-hook/resize-observer";
+import { useWindowHeight } from "@react-hook/window-size";
 
 const MenuUI = ({context, notifier, selection, quickActions}) => {
     const topMenuRef    = useRef(null);
@@ -18,29 +19,29 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
     const [showScrollTop, setShowScrollTop]         = useState(true);
     const [showScrollBottom, setShowScrollBottom]   = useState(true);
 
+    const windowHeight = useWindowHeight();
+
     const handleScroll  = () => {
         setShowScrollTop(document.documentElement.scrollTop === 0);
-        setShowScrollBottom(document.documentElement.scrollHeight <= document.documentElement.clientHeight + Math.ceil(document.documentElement.scrollTop));
+        setShowScrollBottom(Math.floor(document.documentElement.scrollHeight) <= Math.ceil(windowHeight) + Math.ceil(document.documentElement.scrollTop));
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         handleScroll();
-    }, []);
-
-    useResizeObserver(topMenuRef, () => {
-        return handleScroll();
-    });
-
-    useResizeObserver(bottomMenuRef, () => {
-        return handleScroll();
-    });
-
-    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-    
+    });
+
+    useResizeObserver(topMenuRef, () => {
+        handleScroll();
+        return handleScroll;
+    });
+
+    useResizeObserver(bottomMenuRef, () => {
+        handleScroll();
+        return handleScroll;
+    });
 
     return (
         <div className="vh-100 d-flex flex-column">
