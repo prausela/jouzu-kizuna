@@ -6,6 +6,7 @@ import MenuQuickActionsUI from "./MenuQuickActionsUI";
 import MenuSelectionUI from "../../Selection/SelectionUI";
 import SelectionScrollUI from "../../Selection/SelectionScrollUI";
 import useHeight from "../../Hooks/useHeight";
+import useResizeObserver from "@react-hook/resize-observer";
 
 const MenuUI = ({context, notifier, selection, quickActions}) => {
     const topMenuRef    = useRef(null);
@@ -24,13 +25,21 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
 
     useEffect(() => {
         handleScroll();
-    }, [topMenuHeight, bottomMenuHeight]);
+    }, []);
+
+    useResizeObserver(topMenuRef, () => {
+        return handleScroll();
+    });
+
+    useResizeObserver(bottomMenuRef, () => {
+        return handleScroll();
+    });
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
     
 
     return (
