@@ -25,7 +25,8 @@ const SelectionController = ({selectionId, switchToMain, switchToGameMode}) => {
                 {
                     value   : "た",
                     onClick : () => switchToGameMode("ta_form_game")
-                }]
+                }
+            ]
         },
         "3" : {
             title   : "レベル　三",

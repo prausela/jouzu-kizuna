@@ -79,7 +79,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
                         canScroll
                     />
                     <MenuQuickActionsUI 
-                        className="mt-3"
+                        className="m-4 mt-3"
                         actions={quickActions}
                     />
                 </div>

@@ -11,7 +11,7 @@ const MenuQuickActionsUI = ({actions, className}) => {
                         <QuickActionButtonUI 
                             name={action.name}
                             icon={action.icon}
-                            className="flex-grow-1 flex-shrink-1"
+                            className="flex-grow-1 flex-shrink-1 p-2"
                             style={{
                                 flexBasis: 0,
                                 maxWidth: "8rem"
@@ -21,7 +21,7 @@ const MenuQuickActionsUI = ({actions, className}) => {
                             key={index}
                         />) : (
                         <QuickActionButtonUI
-                            className="flex-grow-1 flex-shrink-1"
+                            className="flex-grow-1 flex-shrink-1 p-2"
                             style={{
                                 flexBasis: 0,
                                 maxWidth: "8rem"
