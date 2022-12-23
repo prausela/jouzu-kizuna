@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const MenuContextActionUI = ({icon, title, onClick, hasCtxAction, className, style}) => {
+const MenuContextActionUI = ({icon, title, onClick, hasCtxAction, onRight, className, style}) => {
     return (
         <>
             {
@@ -20,7 +20,7 @@ const MenuContextActionUI = ({icon, title, onClick, hasCtxAction, className, sty
                                 maxHeight: "4.2rem",
                                 borderSizing: "border-box",
                                 borderRadius: 0,
-                                clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)"
+                                clipPath: onRight ? "polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 80%)" : "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)"
                             }}
                         >
                             <div><FontAwesomeIcon icon={icon} className="h3 m-0"/></div>
