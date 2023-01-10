@@ -8,10 +8,10 @@ const SelectionButtonUI = ({value, code, hasCode, className, style, onClick}) =>
             
             <Button
                 variant="dark"
-                className={(className ? className + " " : "") + " w-100"}
+                className={(className ? className + " " : "") + " w-100 pt-2 pb-2"}
                 onClick={onClick}
             >
-                <span className="text-very-big">{value}</span>
+                <strong className="text-big-2">{value}</strong>
             </Button>
             {
                 hasCode ? (
