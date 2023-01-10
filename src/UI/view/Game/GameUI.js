@@ -7,8 +7,6 @@ import MenuUI from './MenuUI';
 
 // Style files
 import './GameUI.css';
-import './TeFormUI.css';
-import './GuessFormUI.css';
 
 const GameUI = (props) => {
     const question = props.question ? props.question : "";
@@ -34,7 +32,7 @@ const GameUI = (props) => {
                 resetGame={resetGame}
                 returnToMenu={returnToMenu}
             />
-            <div className="question">{question}</div>
+            <div className="question"><div><p><strong>{question}</strong></p></div></div>
             {
                 answers.map(ans => {
                     return (

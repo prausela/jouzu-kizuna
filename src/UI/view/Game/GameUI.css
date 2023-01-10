@@ -1,7 +1,7 @@
 .game-interface {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(11, 1fr);
     grid-template-areas: 
         "menu menu"
         "q q"
@@ -23,17 +23,59 @@
 }
 
 .question {
+    width: 100%;
     grid-area: q;
-    margin: auto auto;
-    padding: 0.25em;
-    font-size: 5em;
+    overflow-y: auto;
+    display: flex;
+    align-items: stretch;
+}
+
+.question div {
+    width: 100%;
+    margin: auto 0;
+    text-align: center;
+}
+
+.question p {
+    --max-word-size: 11;
+    --margin-space: 3rem;
+    max-width: 100%;
+    font-size: min(calc((100vw - var(--margin-space)) / var(--max-word-size)), calc((50rem - var(--margin-space)) / var(--max-word-size)));
+    padding: 0 1rem 0 1rem;
     word-break: keep-all;
+    line-break: auto;
+    overflow-wrap: break-word;
+    display: inline-block;
+    text-align: left;
+}
+
+.ans, .ans .btn {
+    width: 100%;
+    margin: 0;
+}
+
+.ans {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
 }
 
 .ans .btn {
-    font-size: 1.5em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.ans .btn p {
+    --max-word-size: 7;
+    --margin-space: calc(1rem + 1rem);
+    font-size: min(calc((50vw - var(--margin-space)) / var(--max-word-size)), calc((25rem - var(--margin-space)) / var(--max-word-size)));
     white-space: pre-line;
     word-break: keep-all;
+    line-break: auto;
+    overflow-wrap: break-word;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .ans1{
