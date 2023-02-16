@@ -12,18 +12,20 @@ import { useWindowHeight } from "@react-hook/window-size";
 const MenuUI = ({context, notifier, selection, quickActions}) => {
     const topMenuRef    = useRef(null);
     const bottomMenuRef = useRef(null);
+    const containerRef  = useRef(null);
 
     const topMenuHeight     = useHeight(topMenuRef);
     const bottomMenuHeight  = useHeight(bottomMenuRef);
+    const containerHeight   = useHeight(containerRef);
 
     const [showScrollTop, setShowScrollTop]         = useState(true);
     const [showScrollBottom, setShowScrollBottom]   = useState(true);
 
     const windowHeight = useWindowHeight();
-
+    
     const handleScroll  = () => {
-        setShowScrollTop(document.documentElement.scrollTop === 0);
-        setShowScrollBottom(Math.floor(document.documentElement.scrollHeight) <= Math.ceil(windowHeight) + Math.ceil(document.documentElement.scrollTop));
+        setShowScrollTop(document.documentElement.scrollTop === 0);        
+        setShowScrollBottom(Math.floor(containerHeight) <= Math.ceil(windowHeight) + Math.ceil(document.documentElement.scrollTop));
     }
 
     useLayoutEffect(() => {
@@ -64,6 +66,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
                 </div>
             </div>
             <MenuSelectionUI
+                containerRef={containerRef}
                 options={selection}
                 style={{
                     paddingTop: topMenuHeight,
