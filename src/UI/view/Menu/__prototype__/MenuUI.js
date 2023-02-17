@@ -7,25 +7,25 @@ import MenuSelectionUI from "../../Selection/SelectionUI";
 import SelectionScrollUI from "../../Selection/SelectionScrollUI";
 import useHeight from "../../Hooks/useHeight";
 import useResizeObserver from "@react-hook/resize-observer";
-import { useWindowHeight } from "@react-hook/window-size";
+import usePosition from "../../Hooks/usePosition";
 
 const MenuUI = ({context, notifier, selection, quickActions}) => {
     const topMenuRef    = useRef(null);
     const bottomMenuRef = useRef(null);
-    const containerRef  = useRef(null);
+    const endOfPageRef  = useRef(null);
 
     const topMenuHeight     = useHeight(topMenuRef);
     const bottomMenuHeight  = useHeight(bottomMenuRef);
-    const containerHeight   = useHeight(containerRef);
+
+    const bottomMenuPosition    = usePosition(bottomMenuRef);
+    const endOfPagePosition     = usePosition(endOfPageRef);
 
     const [showScrollTop, setShowScrollTop]         = useState(true);
     const [showScrollBottom, setShowScrollBottom]   = useState(true);
-
-    const windowHeight = useWindowHeight();
     
     const handleScroll  = () => {
         setShowScrollTop(document.documentElement.scrollTop === 0);        
-        setShowScrollBottom(Math.floor(containerHeight) <= Math.ceil(windowHeight) + Math.ceil(document.documentElement.scrollTop));
+        setShowScrollBottom(Math.ceil(bottomMenuPosition.y) >= Math.floor(endOfPagePosition.y) - 1);
     }
 
     useLayoutEffect(() => {
@@ -46,7 +46,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
     });
 
     return (
-        <div className="vh-100 d-flex flex-column">
+        <div className="d-flex flex-column">
             <div className="position-fixed top-0 start-0 end-0 bg-white" ref={topMenuRef}>
                 <div className="mx-auto bounds">
                     <MenuContextUI 
@@ -66,7 +66,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
                 </div>
             </div>
             <MenuSelectionUI
-                containerRef={containerRef}
+                endOfPageRef={endOfPageRef}
                 options={selection}
                 style={{
                     paddingTop: topMenuHeight,
