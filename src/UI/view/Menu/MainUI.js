@@ -5,7 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faPlus, faHashtag, faMinus, faGear } from "@fortawesome/free-solid-svg-icons";
 
 const context = {
-    "title"  : "じょうず",
+    "title"  : "上手絆",
     "icon"   : faHome
 }
 

@@ -9,17 +9,17 @@ const quickActions = [
     {
         "name"      : "Nuevo",
         "icon"      : faPlus,
-        "show"      : true,
+        "show"      : false,
         "disabled"  : true
     }, {
         "name"      : "Agregar",
         "icon"      : faHashtag,
-        "show"      : true,
+        "show"      : false,
         "disabled"  : true
     }, {
         "name"      : "Quitar",
         "icon"      : faMinus,
-        "show"      : true,
+        "show"      : false,
         "disabled"  : true
     }, {
         "name"      : "Ajustes",
