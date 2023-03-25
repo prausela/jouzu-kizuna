@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MainController from "./MainController";
 import SelectionController from "./SelectionController";
 
-const MenuController = ({switchToGameMode}) => {
+const MenuController = ({switchToGameMode, notifications}) => {
     const interfaces = {
         "main"      : {
             controller : MainController
@@ -22,10 +22,11 @@ const MenuController = ({switchToGameMode}) => {
         setInterfaceProps({});
     }
     
-    const switchToSelection = (selectionId) => {
+    const switchToSelection = (selectionId, title) => {
         setCurrInterface("selection");
         setInterfaceProps({
             "selectionId"      : selectionId,
+            "title"            : title,
             "switchToGameMode" : switchToGameMode
         })
     }
@@ -34,6 +35,7 @@ const MenuController = ({switchToGameMode}) => {
         <Controller 
             switchToMain={switchToMain}
             switchToSelection={switchToSelection}
+            notifications={notifications}
             {...interfaceProps}
         />
     )

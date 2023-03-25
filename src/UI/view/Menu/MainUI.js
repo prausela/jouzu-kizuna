@@ -33,12 +33,13 @@ const quickActions = [
     }
 ]
 
-const MainUI = ({selection}) => {
+const MainUI = ({selection, notifications}) => {
     return (
         <MenuUI 
             context={context}
             selection={selection}
             quickActions={quickActions}
+            notifier={notifications}
         />
     )
 }

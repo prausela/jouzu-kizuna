@@ -56,6 +56,7 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
                     />
                     <MenuNotifierUI 
                         className="mt-3"
+                        notification1={notifier.length > 0 ? notifier[0]: undefined}
                     />
                     <SelectionScrollUI
                         scrollDirection="up"

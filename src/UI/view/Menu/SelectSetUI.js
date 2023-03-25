@@ -29,7 +29,7 @@ const quickActions = [
     }
 ]
 
-const SelectSetUI = ({title, selection, switchToMain}) => {
+const SelectSetUI = ({title, selection, switchToMain, notifications}) => {
 
     const context = {
         "title"  : title,
@@ -46,6 +46,7 @@ const SelectSetUI = ({title, selection, switchToMain}) => {
             context={context}
             selection={selection}
             quickActions={quickActions}
+            notifier={notifications}
         />
     )
 }

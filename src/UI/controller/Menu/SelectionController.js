@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SetLocalDao from "../../../data/access/local/SetLocalDao";
 import SelectSetUI from '../../view/Menu/SelectSetUI';
 
-const SelectionController = ({selectionId, switchToMain, switchToGameMode}) => {
-    const selection = {
+const SelectionController = ({selectionId, title, switchToMain, switchToGameMode, notifications}) => {
+
+    const [selection, setSelection] = useState(undefined);
+
+    /* const selection = {
         "1" : {
             title   : "レベル　一",
             options : []
@@ -44,12 +48,23 @@ const SelectionController = ({selectionId, switchToMain, switchToGameMode}) => {
                     onClick : () => switchToGameMode("guess_form_game")
                 }]
         }
-    }
+    } */
+
+    useEffect(() => {
+        SetLocalDao.getAllSets(selectionId).then((sets) => {
+            setSelection(sets.filter(s => s.questions.length > 0).map(s => ({
+                value   : s.name,
+                onClick : () => switchToGameMode(s.id, selectionId)
+            })));
+        });
+    }, [selectionId, switchToGameMode]);
+
     return (
         <SelectSetUI 
             switchToMain={switchToMain}
-            title={selection[selectionId] ? selection[selectionId].title : undefined}
-            selection={selection[selectionId] ? selection[selectionId].options : undefined}
+            title={title ? title : undefined}
+            selection={selection ? selection : undefined}
+            notifications={notifications}
         />
     )
 }

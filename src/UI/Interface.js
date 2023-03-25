@@ -21,17 +21,22 @@ const Interface = (props) => {
         }
     }
 
-    const services      = props.services;
-    const gameMode      = props.gameMode;
-    const setGameMode   = props.setGameMode;
+    const services          = props.services;
+
+    const questionSet       = props.questionSet;
+    const setQuestionSet    = props.setQuestionSet;
+
+    const questionCategory       = props.questionCategory;
+    const setQuestionCategory    = props.setQuestionCategory;
 
     const [ currInterface, setCurrInterface ] = useState("main");
 
     const className     = "interface " + interfaces[currInterface].className;
     const Controller    = interfaces[currInterface].controller;
 
-    const switchToGameMode = (gameMode) => {
-        setGameMode(gameMode);
+    const switchToGameMode = (setId, categoryId) => {
+        setQuestionSet(setId + "");
+        setQuestionCategory(categoryId + "");
         setCurrInterface("game");
     }
 
@@ -43,9 +48,11 @@ const Interface = (props) => {
         <div className={className}>
             <Controller
                 services={services} 
-                gameMode={gameMode}
+                questionSet={questionSet}
+                questionCategory={questionCategory}
                 returnToMenu={returnToMenu}
                 switchToGameMode={switchToGameMode}
+                notifications={props.notifications}
             />
         </div>
     )

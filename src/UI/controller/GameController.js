@@ -1,14 +1,15 @@
 // From packages
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import GameService from '../../logic/GameService';
 
 // Proyect components
 import GameUI from '../view/Game/GameUI';
 
 const GameController = (props) => {
-    let gameData = useRef({});
+    let gameData = useRef();
 
-    const services    = props.services;
-    const currService = props.gameMode;
+    const currSet       = props.questionSet;
+    const currCategory  = props.questionCategory;
 
     const [ correct, setCorrect ] = useState(0);
     const [ incorrect, setIncorrect ] = useState(0);
@@ -28,32 +29,34 @@ const GameController = (props) => {
     const returnToMenu = props.returnToMenu;
 
     const loadNextQuestion = useCallback(() => {
-        const nextQuestion = services[currService].getNextQuestion(gameData.current);
-        setId(nextQuestion.id);
-        setQuestion(nextQuestion.question);
-        setAns1(nextQuestion.answers[0]);
-        setAns2(nextQuestion.answers[1]);
-        setAns3(nextQuestion.answers[2]);
-        setAns4(nextQuestion.answers[3])
-    }, [services, currService]);
+        GameService.getNextQuestion(currCategory, currSet, 4, gameData.current).then((nextQuestion) => {
+            setId(nextQuestion.id);
+            setQuestion(nextQuestion.question);
+            setAns1(nextQuestion.answers[0].name);
+            setAns2(nextQuestion.answers[1].name);
+            setAns3(nextQuestion.answers[2].name);
+            setAns4(nextQuestion.answers[3].name);
+        });
+    }, [currSet, currCategory, gameData]);
 
     const submitAnswer = (selectedAns, selectedAnsId) => {
         if(!ansId){
-            const isCorrect = services[currService].checkIfCorrectAnswer(id, selectedAns);
-            setAnsId(selectedAnsId);
-            if(isCorrect){
-                setCorrect(correct+1);
-                setIsCorrect(true);
-            } else {
-                setIncorrect(incorrect+1);
-                setIsIncorrect(true);
-            }
-            setTimeout(() => {
-                setAnsId(undefined);
-                setIsIncorrect(false);
-                setIsCorrect(false);
-                loadNextQuestion();
-            }, 1000);
+            GameService.checkIfCorrectAnswer(currCategory, currSet, id, selectedAns).then(isCorrect => {
+                setAnsId(selectedAnsId);
+                if(isCorrect){
+                    setCorrect(correct+1);
+                    setIsCorrect(true);
+                } else {
+                    setIncorrect(incorrect+1);
+                    setIsIncorrect(true);
+                }
+                setTimeout(() => {
+                    setAnsId(undefined);
+                    setIsIncorrect(false);
+                    setIsCorrect(false);
+                    loadNextQuestion();
+                }, 1000);
+            });
         }
 
     }
@@ -64,9 +67,11 @@ const GameController = (props) => {
     }
 
     useEffect(() => {
-        gameData.current = services[currService].startNewGame();
-        loadNextQuestion()
-    }, [services, currService, loadNextQuestion]);
+        GameService.startNewGame(currCategory, currSet).then(startData => {
+            gameData.current = startData;
+            loadNextQuestion();
+        });
+    }, [currCategory, currSet, loadNextQuestion]);
 
     return (
         <GameUI 
