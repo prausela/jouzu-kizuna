@@ -32,10 +32,10 @@ const GameController = (props) => {
         GameService.getNextQuestion(currCategory, currSet, 4, gameData.current).then((nextQuestion) => {
             setId(nextQuestion.id);
             setQuestion(nextQuestion.question);
-            setAns1(nextQuestion.answers[0].name);
-            setAns2(nextQuestion.answers[1].name);
-            setAns3(nextQuestion.answers[2].name);
-            setAns4(nextQuestion.answers[3].name);
+            setAns1(nextQuestion.answers[0] ? nextQuestion.answers[0].name : undefined);
+            setAns2(nextQuestion.answers[1] ? nextQuestion.answers[1].name : undefined);
+            setAns3(nextQuestion.answers[2] ? nextQuestion.answers[2].name : undefined);
+            setAns4(nextQuestion.answers[3] ? nextQuestion.answers[3].name : undefined);
         });
     }, [currSet, currCategory, gameData]);
 

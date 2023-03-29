@@ -45,7 +45,7 @@ const getNextQuestion = async (categoryId, setId, number_of_answers, gameData) =
     const chosenIndex = RandomService.getRandomInt(0, gameData.questions.length);
     const question = gameData.questions[chosenIndex];
     gameData.questions.splice(chosenIndex, 1);
-    const wrongAnswers = getXDifferentFrom(number_of_answers, question.answers);
+    const wrongAnswers = getXDifferentFrom(Math.min(question.answers.length+1, number_of_answers), question.answers);
     const correctAnswerPosition = RandomService.getRandomInt(0, number_of_answers);
     return {
         id       : question.id,
