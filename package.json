@@ -1,6 +1,6 @@
 {
   "name": "jouzu-kizuna",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "private": true,
   "homepage": "https://jouzu-kizuna.web.app/",
   "dependencies": {
@@ -18,7 +18,9 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
+    "react-redux": "^8.0.5",
     "react-scripts": "4.0.3",
+    "redux": "^4.2.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Interface from './UI/Interface';
+import { useSelector } from 'react-redux';
+import Alert from './UI/view/Alert';
 
 // Services
 import KanjiToHiraganaService from './logic/KanjiToHiraganaService';
@@ -38,16 +40,65 @@ const App = () => {
             setNotifications([]);
         }, 5000);
     })},[]);
+
+    const isServiceWorkerInitialized = useSelector(
+        state => state.serviceWorkerInitialized,
+    );
+    const isServiceWorkerUpdated = useSelector(
+        state => state.serviceWorkerUpdated,
+    );
+    const serviceWorkerRegistration = useSelector(
+        state => state.serviceWorkerRegistration,
+    );
+
+    const updateServiceWorker = () => {
+    const registrationWaiting = serviceWorkerRegistration.waiting;
+
+    if (registrationWaiting) {
+        registrationWaiting.postMessage({ type: 'SKIP_WAITING' });
+
+        registrationWaiting.addEventListener('statechange', e => {
+        if (e.target.state === 'activated') {
+            window.location.reload();
+        }
+        });
+    }
+    };
     
     return (
-        <Interface 
-            services={services}
-            questionSet={questionSet}
-            setQuestionSet={setQuestionSet}
-            questionCategory={questionCategory}
-            setQuestionCategory={setQuestionCategory}
-            notifications={notifications}
-        />
+        <>
+        {
+            isServiceWorkerUpdated ? (
+                <>
+                    <Alert 
+                        text="Hay una nueva versión disponible"
+                        buttonText="Actualizar"
+                        type={'SW_UPDATE'}
+                        onClick={updateServiceWorker}
+                    >
+                        
+                    </Alert>
+                    <Interface 
+                        services={services}
+                        questionSet={questionSet}
+                        setQuestionSet={setQuestionSet}
+                        questionCategory={questionCategory}
+                        setQuestionCategory={setQuestionCategory}
+                        notifications={notifications}
+                    />
+                </>
+                ) : (
+                <Interface 
+                    services={services}
+                    questionSet={questionSet}
+                    setQuestionSet={setQuestionSet}
+                    questionCategory={questionCategory}
+                    setQuestionCategory={setQuestionCategory}
+                    notifications={notifications}
+                />
+            )
+        }
+        </>
     )
 }
 
