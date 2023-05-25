@@ -32,7 +32,9 @@ const GameUI = (props) => {
                 resetGame={resetGame}
                 returnToMenu={returnToMenu}
             />
-            <div className="question"><div><p><strong>{question}</strong></p></div></div>
+            <div className="question">
+                <div><p><strong>{question}</strong></p></div>
+            </div>
             {
                 answers.map(ans => {
                     return (

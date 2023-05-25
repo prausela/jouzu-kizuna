@@ -1,3 +1,8 @@
+:root {
+    --max-word-size-a: 7;
+    --max-word-size-q: 11;
+}
+
 .game-interface {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -37,10 +42,9 @@
 }
 
 .question p {
-    --max-word-size: 11;
     --margin-space: 3rem;
     max-width: 100%;
-    font-size: min(calc((100vw - var(--margin-space)) / var(--max-word-size)), calc((50rem - var(--margin-space)) / var(--max-word-size)));
+    font-size: min(min(calc((100vw - var(--margin-space)) / var(--max-word-size-q)), calc((100vh - var(--margin-space)) / var(--max-word-size-q))), calc((50rem - var(--margin-space)) / var(--max-word-size-q)));
     padding: 0 1rem 0 1rem;
     word-break: keep-all;
     line-break: auto;
@@ -66,9 +70,8 @@
 }
 
 .ans .btn p {
-    --max-word-size: 7;
     --margin-space: calc(1rem + 1rem);
-    font-size: min(calc((50vw - var(--margin-space)) / var(--max-word-size)), calc((25rem - var(--margin-space)) / var(--max-word-size)));
+    font-size: min(min(calc((45vw - var(--margin-space)) / var(--max-word-size-a)), calc((45vh - var(--margin-space)) / var(--max-word-size-a))), calc((20rem - var(--margin-space)) / var(--max-word-size-a)));
     white-space: pre-line;
     word-break: keep-all;
     line-break: auto;
