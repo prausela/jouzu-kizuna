@@ -2,7 +2,6 @@
     margin: 0 auto;
     height: 100vh;
     max-width: 50rem;
-    min-width: 25rem;
 }
 
 .flex-basis-0 {
@@ -20,7 +19,6 @@
 
 .bounds {
     max-width: 50rem;
-    min-width: 25rem;
 }
 
 .text-big {
