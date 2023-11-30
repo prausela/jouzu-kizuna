@@ -5,7 +5,7 @@ import QuickActionButtonUI from "../../Buttons/QuickActionButtonUI";
 const MenuQuickActionsUI = ({actions, className}) => {
     return (
         <>
-            <div className={(className ? className + " " : "") + "d-flex align-items-center justify-content-between"}>
+            { /*<div className={(className ? className + " " : "") + "d-flex align-items-center justify-content-between"}>
                 {
                     actions ? actions.map((action, index) => {
                         return action.show ? (
@@ -32,10 +32,12 @@ const MenuQuickActionsUI = ({actions, className}) => {
                                 key={index}
                             />
                         )
-                    }) : ""
+                    }) : "" 
                 }
-            </div>
-            <span>Versión 1.0.15</span>
+            </div> */ }
+            <div
+                className="p-2 text-end"
+            >Versión 1.0.16</div>
         </>
     )
 }
