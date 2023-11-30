@@ -35,7 +35,7 @@ const MenuQuickActionsUI = ({actions, className}) => {
                     }) : ""
                 }
             </div>
-            <span>Versión 1.0.14</span>
+            <span>Versión 1.0.15</span>
         </>
     )
 }
