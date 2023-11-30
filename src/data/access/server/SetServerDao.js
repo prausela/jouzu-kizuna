@@ -2,7 +2,7 @@ import { BASE_URL, OK, TIMEOUT } from "../../../UI/config/apiConstants";
 
 const getAllSets = async (categoryId) => {
     try {
-        const response = await fetch(BASE_URL + `/categories/${categoryId}/sets/get`, {
+        const response = await fetch(BASE_URL + `/categories/${categoryId}/sets/get?sort=position`, {
             method : "get"
         });
         if (response.status !== OK) {

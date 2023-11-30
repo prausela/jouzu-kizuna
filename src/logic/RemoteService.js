@@ -6,7 +6,7 @@ const getRemoteCategories = async () => {
     const response      = await CategoryServerDao.getAllCategories();
     const categoryDtos  = response.data;
     const filteredCats  = categoryDtos.filter(c => c.visibility === "visible");
-    const categories    = filteredCats.map(c => ({id : c.id, name: c.name}));
+    const categories    = filteredCats.map(c => ({id : c.id, name: c.name, position: c.position}));
     return categories;
 }
 
@@ -15,7 +15,7 @@ const _getRemoteCategoriesWithSets = async (categories) => {
         const response    = await SetServerDao.getAllSets(c.id);
         const setDtos     = response.data;
         const filterdSets = setDtos.filter(s => s.visibility === "visible");
-        const sets        = filterdSets.map(s => ({id: s.id, name: s.name}));
+        const sets        = filterdSets.map(s => ({id: s.id, name: s.name, position: c.position}));
         return {...c, sets: sets};
     }));
     return categoriesWSets;

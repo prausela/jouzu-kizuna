@@ -2,7 +2,7 @@ import PouchDb from "pouchdb";
 
 const getAllCategories = async () => {
     const db = new PouchDb("questiondb");
-    return (await db.allDocs({include_docs: true})).rows.map(doc => doc.doc);
+    return (await db.allDocs({include_docs: true})).rows.map(doc => doc.doc).sort((a, b) => a.position - b.position);
 }
 
 const findCategory = async (id) => {
