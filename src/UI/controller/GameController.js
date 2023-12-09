@@ -23,6 +23,7 @@ const GameController = (props) => {
     const [ ans2, setAns2 ] = useState("");
     const [ ans3, setAns3 ] = useState("");
     const [ ans4, setAns4 ] = useState("");
+    const [ correctAnswer, setCorrectAnswer ] = useState(undefined);
 
     const [ ansId, setAnsId ] = useState(undefined);
 
@@ -41,9 +42,10 @@ const GameController = (props) => {
 
     const submitAnswer = (selectedAns, selectedAnsId) => {
         if(!ansId){
-            GameService.checkIfCorrectAnswer(currCategory, currSet, id, selectedAns).then(isCorrect => {
+            GameService.checkIfCorrectAnswer(currCategory, currSet, id).then(correctAns => {
                 setAnsId(selectedAnsId);
-                if(isCorrect){
+                setCorrectAnswer(correctAns);
+                if(correctAns === selectedAns){
                     setCorrect(correct+1);
                     setIsCorrect(true);
                 } else {
@@ -52,6 +54,7 @@ const GameController = (props) => {
                 }
                 setTimeout(() => {
                     setAnsId(undefined);
+                    setCorrectAnswer(undefined);
                     setIsIncorrect(false);
                     setIsCorrect(false);
                     loadNextQuestion();
@@ -88,6 +91,7 @@ const GameController = (props) => {
             submitAnswer={submitAnswer}
             resetGame={resetGame}
             returnToMenu={returnToMenu}
+            correctAnswer={correctAnswer}
         />
     )
 }

@@ -54,15 +54,15 @@ const getNextQuestion = async (categoryId, setId, number_of_answers, gameData) =
     };
 }
 
-const checkIfCorrectAnswer = async (categoryId, setId, id, answer) => {
+const checkIfCorrectAnswer = async (categoryId, setId, id) => {
     const answerData = await QuestionLocalDao.findQuestion(categoryId, setId, id);
-    return answer === answerData.correct_answer.name;
+    return answerData.correct_answer.name;
 }
 
 const GameService = {
     startNewGame            : (categoryId, setId)                                   => startNewGame(categoryId, setId),
     getNextQuestion         : (categoryId, setId, number_of_answers, questions)     => getNextQuestion(categoryId, setId, number_of_answers, questions),
-    checkIfCorrectAnswer    : (categoryId, setId, id, answer)                       => checkIfCorrectAnswer(categoryId, setId, id, answer)
+    checkIfCorrectAnswer    : (categoryId, setId, id)                               => checkIfCorrectAnswer(categoryId, setId, id)
 };
 
 export default GameService;

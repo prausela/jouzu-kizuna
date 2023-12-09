@@ -16,14 +16,15 @@ const GameUI = (props) => {
         text: answerProps[x-1],
         className: "ans" + x
     }));
-    const correct      = props.correct;
-    const incorrect    = props.incorrect;
-    const isCorrect    = props.isCorrect;
-    const isIncorrect  = props.isIncorrect;
-    const ansId        = props.ansId;
-    const submitAnswer = props.submitAnswer;
-    const resetGame    = props.resetGame;
-    const returnToMenu = props.returnToMenu;
+    const correct       = props.correct;
+    const incorrect     = props.incorrect;
+    const isCorrect     = props.isCorrect;
+    const isIncorrect   = props.isIncorrect;
+    const ansId         = props.ansId;
+    const submitAnswer  = props.submitAnswer;
+    const resetGame     = props.resetGame;
+    const returnToMenu  = props.returnToMenu;
+    const correctAnswer = props.correctAnswer;
     return (
         <>
             <MenuUI 
@@ -41,7 +42,7 @@ const GameUI = (props) => {
                     <AnswerUI 
                         text={ans.text} 
                         className={ans.className} 
-                        isCorrect={isCorrect && ansId === ans.id}
+                        isCorrect={correctAnswer && ans.text === correctAnswer}
                         isIncorrect={isIncorrect && ansId === ans.id}
                         key={ans.id}
                         id={ans.id}
