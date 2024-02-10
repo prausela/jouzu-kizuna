@@ -12,6 +12,7 @@ import TaFormService from './logic/TaFormService';
 import GuessFormService from './logic/GuessFormService';
 import CountersService from './logic/CountersService';
 import SyncService from './logic/SyncService';
+import LoginUI from './UI/view/LoginUI';
 
 const services = {
     "kanji_to_hiragana_game" : KanjiToHiraganaService,
@@ -24,22 +25,29 @@ const services = {
 };
 
 const App = () => {
+    const [ isAuth, setIsAuth] = useState(false);
+    
     const [ questionSet, setQuestionSet ]           = useState("");
     const [ questionCategory, setQuestionCategory ] = useState("");
 
     const [ notifications, setNotifications ] = useState([]);
 
-    useEffect(() => {SyncService.updateLocalDatabase().then(() => {
-        setNotifications(["Base de datos actualizada exitosamente"]);
-        setTimeout(() => {
-            setNotifications([]);
-        }, 5000);
-    }).catch(() => {
-        setNotifications(["Trabajando con copia local"]);
-        setTimeout(() => {
-            setNotifications([]);
-        }, 5000);
-    })},[]);
+    useEffect(() => {
+        if (isAuth) {
+            SyncService.updateLocalDatabase().then(() => {
+                setNotifications(["Base de datos actualizada exitosamente"]);
+                setTimeout(() => {
+                    setNotifications([]);
+                }, 5000);
+            }
+            ).catch(() => {
+                setNotifications(["Trabajando con copia local"]);
+                setTimeout(() => {
+                    setNotifications([]);
+                }, 5000);
+            })
+        }
+    },[]);
 
     const isServiceWorkerInitialized = useSelector(
         state => state.serviceWorkerInitialized,
@@ -50,6 +58,7 @@ const App = () => {
     const serviceWorkerRegistration = useSelector(
         state => state.serviceWorkerRegistration,
     );
+    navigator.serviceWorker.getRegistration().then()
 
     const updateServiceWorker = () => {
     const registrationWaiting = serviceWorkerRegistration.waiting;
@@ -64,6 +73,14 @@ const App = () => {
         });
     }
     };
+
+    if (!isAuth) {
+        return (
+            <LoginUI 
+                setIsAuth={setIsAuth}
+            />
+        );
+    }
     
     return (
         <>

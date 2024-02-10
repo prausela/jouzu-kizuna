@@ -37,7 +37,7 @@ const MenuQuickActionsUI = ({actions, className}) => {
             </div> */ }
             <div
                 className="p-2 text-end"
-            >Versión 1.0.17</div>
+            >Versión 1.0.18</div>
         </>
     )
 }
