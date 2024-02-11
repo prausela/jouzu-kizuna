@@ -29,7 +29,7 @@ const MenuContextActionUI = ({icon, title, onClick, hasCtxAction, onRight, class
                     </div>
                 ) : (
                     <span
-                        className={className + " align-middle"}
+                        className={className + " align-middle px-3 py-2"}
                         style={{
                             minHeight: "4.2rem",
                             maxHeight: "4.2rem",
