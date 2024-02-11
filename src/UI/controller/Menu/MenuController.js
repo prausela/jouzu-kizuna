@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainController from "./MainController";
 import SelectionController from "./SelectionController";
+import UserController from "./UserController";
 
 const MenuController = ({switchToGameMode, notifications}) => {
     const interfaces = {
@@ -9,6 +10,9 @@ const MenuController = ({switchToGameMode, notifications}) => {
         }, 
         "selection" : {
             controller : SelectionController
+        },
+        "user" : {
+            controller : UserController
         }
     }
 
@@ -31,10 +35,16 @@ const MenuController = ({switchToGameMode, notifications}) => {
         })
     }
 
+    const switchToUser = () => {
+        setCurrInterface("user");
+        setInterfaceProps({});
+    }
+
     return (
         <Controller 
             switchToMain={switchToMain}
             switchToSelection={switchToSelection}
+            switchToUser={switchToUser}
             notifications={notifications}
             {...interfaceProps}
         />

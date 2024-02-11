@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SetLocalDao from "../../../data/access/local/SetLocalDao";
 import SelectSetUI from '../../view/Menu/SelectSetUI';
 
-const SelectionController = ({selectionId, title, switchToMain, switchToGameMode, notifications}) => {
+const SelectionController = ({selectionId, title, switchToMain, switchToGameMode, switchToUser, notifications}) => {
 
     const [selection, setSelection] = useState(undefined);
 
@@ -62,6 +62,7 @@ const SelectionController = ({selectionId, title, switchToMain, switchToGameMode
     return (
         <SelectSetUI 
             switchToMain={switchToMain}
+            switchToUser={switchToUser}
             title={title ? title : undefined}
             selection={selection ? selection : undefined}
             notifications={notifications}

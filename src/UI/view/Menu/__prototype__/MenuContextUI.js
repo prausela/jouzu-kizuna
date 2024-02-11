@@ -2,23 +2,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import MenuContextActionUI from "./MenuContextActionUI";
 
-const MenuContextUI = ({action, title, icon, className}) => {
+const MenuContextUI = ({leftAction, rightAction, title, icon, className}) => {
     return (
-        <div className={(className ? className + " " : "") + "position-relative"}>
+        <div className={(className ? className + " " : "") + "d-flex justify-content-between position-relative"}>
             <MenuContextActionUI 
-                icon={action ? action.icon : undefined}
-                title={action ? action.title : undefined}
-                onClick={action ? action.onClick : undefined}
-                hasCtxAction={action ? true : false}
+                icon={leftAction ? leftAction.icon : undefined}
+                title={leftAction ? leftAction.title : undefined}
+                onClick={leftAction ? leftAction.onClick : undefined}
+                hasCtxAction={leftAction ? true : false}
                 className="d-inline-block"
             />
             <h1 className="d-inline-block position-absolute start-50 top-50 translate-middle text-extremely-big m-0 text-center fw-normal">
-            <FontAwesomeIcon icon={icon} className="text-very-big m-0 me-4"/>
+                <FontAwesomeIcon icon={icon} className="text-very-big m-0 me-4"/>
                 {title}
             </h1>
-            <div className="d-inline-block position-absolute end-0 top-50 translate-middle-y align-middle text-end">
-                <FontAwesomeIcon icon={icon} className="text-very-big m-0 me-4"/>
-            </div>
+            <MenuContextActionUI 
+                icon={rightAction ? rightAction.icon : undefined}
+                title={rightAction ? rightAction.title : undefined}
+                onClick={rightAction ? rightAction.onClick : undefined}
+                hasCtxAction={rightAction ? true : false}
+                className="d-inline-block"
+                onRight
+                smallIcon
+            />
         </div>
     )
 }

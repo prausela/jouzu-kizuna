@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuUI from './__prototype__/MenuUI';
 
-import { faArrowLeft, faList } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faList, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faPlus, faHashtag, faMinus, faGear } from '@fortawesome/free-solid-svg-icons';
 
 const quickActions = [
@@ -29,15 +29,20 @@ const quickActions = [
     }
 ]
 
-const SelectSetUI = ({title, selection, switchToMain, notifications}) => {
+const SelectSetUI = ({title, selection, switchToMain, switchToUser, notifications}) => {
 
     const context = {
         "title"  : title,
         "icon"   : faList,
-        "action" : {
+        "leftAction" : {
             "title"   : "Volver",
             "icon"    : faArrowLeft,
             "onClick" : switchToMain
+        },
+        "rightAction" : {
+            "title"   : "わたし",
+            "icon"    : faUser,
+            "onClick" : switchToUser
         }
     }
 

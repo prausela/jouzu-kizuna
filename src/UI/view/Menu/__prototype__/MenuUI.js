@@ -50,7 +50,8 @@ const MenuUI = ({context, notifier, selection, quickActions}) => {
             <div className="position-fixed top-0 start-0 end-0 bg-white" ref={topMenuRef}>
                 <div className="mx-auto bounds">
                     <MenuContextUI 
-                        action={context.action}
+                        leftAction={context.leftAction}
+                        rightAction={context.rightAction}
                         title={context.title}
                         icon={context.icon}
                     />

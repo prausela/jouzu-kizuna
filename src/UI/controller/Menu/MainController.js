@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CategoryLocalDao from "../../../data/access/local/CategoryLocalDao";
 import MainUI from "../../view/Menu/MainUI";
 
-const MainController = ({switchToSelection, notifications}) => {
+const MainController = ({switchToSelection, switchToUser, notifications}) => {
 
     const [selection, setSelection] = useState([]);
 
@@ -30,6 +30,7 @@ const MainController = ({switchToSelection, notifications}) => {
 
     return (
         <MainUI 
+            switchToUser={switchToUser}
             selection={selection}
             notifications={notifications}
         />

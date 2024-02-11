@@ -1,13 +1,8 @@
 import React from 'react';
 import MenuUI from './__prototype__/MenuUI';
 
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faPlus, faHashtag, faMinus, faGear } from "@fortawesome/free-solid-svg-icons";
-
-const context = {
-    "title"  : "上手絆",
-    "icon"   : faHome
-}
 
 const quickActions = [
     {
@@ -33,7 +28,17 @@ const quickActions = [
     }
 ]
 
-const MainUI = ({selection, notifications}) => {
+const MainUI = ({switchToUser, selection, notifications}) => {
+    const context = {
+        "title"  : "上手絆",
+        "icon"   : faHome,
+        "rightAction" : {
+            "title"   : "わたし",
+            "icon"    : faUser,
+            "onClick" : switchToUser
+        }
+    }
+
     return (
         <MenuUI 
             context={context}
