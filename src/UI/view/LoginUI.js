@@ -4,6 +4,17 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 const LoginUI = ({setIsAuth}) => {
+
+    const handleAccept = () => {
+        setIsAuth(true);
+    }
+
+    const handleEnter = (event) => {
+        if(event.key === "Enter") {
+            handleAccept();
+        }
+    }
+
     return (
         <div
             className="px-5 d-flex flex-column vh-100 align-items-center justify-content-between w-100 pb-5"
@@ -22,18 +33,21 @@ const LoginUI = ({setIsAuth}) => {
                 <Form.Control 
                     className="border border-secondary text-big py-2 px-3 border-4 fw-bold"
                     placeholder="Usuario"
+                    onKeyDown={handleEnter}
+                    autoFocus
                 />
                 <Form.Control
                     className="border border-secondary text-big py-2 px-3 border-4 fw-bold mt-4 mb-5"
                     placeholder="Contraseña"
                     type="password"
+                    onKeyDown={handleEnter}
                 />
                 <span className="d-flex mb-5"/>
             </div>
             <Button
                 className="mt-3 p-2 ps-5 text-big-2 rounded-pill mb-5 mt-5"
                 variant="dark"
-                onClick={() => setIsAuth(true)}
+                onClick={handleAccept}
             >
                 <strong>
                 Ingresar
