@@ -32,7 +32,7 @@ const UserUI = ({switchToMain}) => {
                 </p>
                 <Button
                     variant="light"
-                    className="mt-5 rounded-pill text-big-2 pe-5 ps-4 mb-5"
+                    className="mt-5 rounded-pill text-big pe-5 ps-4 mb-5"
                 >
                     <FontAwesomeIcon icon={faKey} className="pe-3"/>
                     <strong>Cerrar Sesión</strong>
