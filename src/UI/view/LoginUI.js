@@ -1,9 +1,12 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
 const LoginUI = ({setIsAuth}) => {
+
+    const [ username, setUsername ] = useState();
+    const [ password, setPassword ] = useState();
 
     const handleAccept = () => {
         setIsAuth(true);
@@ -34,12 +37,16 @@ const LoginUI = ({setIsAuth}) => {
                     className="border border-secondary text-big py-2 px-3 border-4 fw-bold"
                     placeholder="Usuario"
                     onKeyDown={handleEnter}
+                    onChange={e => setUsername(e.target.value)}
+                    value={username}
                     autoFocus
                 />
                 <Form.Control
                     className="border border-secondary text-big py-2 px-3 border-4 fw-bold mt-4 mb-5"
                     placeholder="Contraseña"
                     type="password"
+                    onChange={e => setPassword(e.target.value)}
+                    value={password}
                     onKeyDown={handleEnter}
                 />
                 <span className="d-flex mb-5"/>
