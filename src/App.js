@@ -47,7 +47,7 @@ const App = () => {
                 }, 5000);
             })
         }
-    },[]);
+    },[isAuth]);
 
     const isServiceWorkerInitialized = useSelector(
         state => state.serviceWorkerInitialized,
